@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="@dimen/size_150"
+    android:background="@color/colorButtonYellow">
+
+    <com.example.android.udacityforum.CustomeRoundedImage
+        android:layout_width="@dimen/size_100"
+        android:layout_height="@dimen/size_100"
+        android:id="@+id/iv_profile"
+        android:layout_marginLeft="@dimen/margin_20"
+        android:layout_marginTop="@dimen/margin_20"
+        android:src="@drawable/android_logo"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_name"
+        android:layout_toRightOf="@id/iv_profile"
+        android:text="@string/username"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/margin_50"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/contact_no"
+        android:id="@+id/contact_no"
+        android:layout_below="@id/tv_name"
+        android:layout_toRightOf="@id/iv_profile"
+        android:textStyle="bold"
+        android:layout_marginLeft="@dimen/margin_10"/>
+
+</RelativeLayout>

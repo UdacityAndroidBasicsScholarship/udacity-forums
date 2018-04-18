@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_search"
+        android:icon="@android:drawable/ic_menu_search"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="android.support.v7.widget.SearchView"
+        android:title="Search"/>
+
+    <item android:id="@+id/action_new"
+        android:title="New"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_top"
+        android:title="Top"
+        app:showAsAction="never"/>
+
+    <item android:id="@+id/action_unread"
+        android:title="Unread"
+        app:showAsAction="never"
+        android:icon="@android:drawable/btn_minus" />
+
+    <item android:id="@+id/action_badges"
+        android:title="Badges"
+        app:showAsAction="never"
+        android:icon="@android:drawable/btn_minus" />
+
+</menu>

@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">UdacityForum</string>
+    <string name="login_screen">login screen</string>
+    <string name="username">Username</string>
+    <string name="full_name">Full name</string>
+    <string name="email_id">Email id</string>
+    <string name="password">Password</string>
+    <string name="emailid_2">Email Id</string>
+    <string name="confirm_your_password">Confirm your password</string>
+
+    <!--Home Activity-->
+    <string name="open_drawer">Open Drawer</string>
+    <string name="close_drawer">Close Drawer</string>
+    <string name="activity_name">Home Activity</string>
+    <string name="contact_no">1234567890</string>
+    <string name="courses">Courses</string>
+    <string name="discussion_form">Discussion Forum</string>
+    <string name="user_panel">User Panel</string>
+    <string name="question">New Question</string>
+</resources>
