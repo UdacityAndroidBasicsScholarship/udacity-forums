@@ -17,10 +17,7 @@
             android:icon="@android:drawable/btn_radio"
             android:title="MyProfile"/>
 
-        <item
-            android:id="@+id/menu_logout"
-            android:icon="@android:drawable/btn_radio"
-            android:title="Logout"/>
+
     </group>
 
 
