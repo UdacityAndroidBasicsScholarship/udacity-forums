@@ -26,4 +26,10 @@
         app:showAsAction="never"
         android:icon="@android:drawable/btn_minus" />
 
+    <item
+        android:id="@+id/menu_logout"
+        app:showAsAction="never"
+        android:icon="@android:drawable/btn_minus"
+        android:title="Logout"/>
+
 </menu>
