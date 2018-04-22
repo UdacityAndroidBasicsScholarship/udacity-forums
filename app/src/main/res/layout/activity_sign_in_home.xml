@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@color/colorPrimaryDark"
     tools:context=".sign_in_home">
 
     <ImageView
@@ -31,7 +31,10 @@
         android:layout_centerHorizontal="true"
         android:layout_below="@id/text"
         android:layout_marginStart="90dp"
-        android:background="@drawable/home_screen_btn" />
+        style="@style/styleButton"
+        android:text="@string/home_page"
+        android:textAllCaps="true"
+        android:textColor="@color/colorBlack"/>
 
     <TextView
         android:layout_width="wrap_content"

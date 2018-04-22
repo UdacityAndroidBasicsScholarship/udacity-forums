@@ -8,5 +8,12 @@
     <color name="ocean_blue">#2B65EC</color>
     <color name="bright_gold">#FDD017</color>
     <color name="colorButtonYellow">#fCEF00</color>
-    <color name="notificationBar">#323E48</color>
+    <color name="colorBlack">#323E48</color>
+    <color name="colorLightestGrey">#e6e6e6</color>
+    <color name="colorDarkestBlue">#0000A0</color>
+    <color name="colorSkyBlue">#5083FF</color>
+    <color name="yellow">#FFFF33</color>
+    <color name="colorlightyellow">#FFFF99</color>
+    <color name="lightSkyBlue">#87CEFA</color>
+    <color name="skyBlue">#87CEEB</color>
 </resources>
