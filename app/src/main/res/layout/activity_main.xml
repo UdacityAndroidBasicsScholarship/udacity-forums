@@ -40,8 +40,9 @@
                 android:text="@string/courses"
                 android:layout_marginLeft="@dimen/margin_20"
                 android:layout_marginRight="@dimen/margin_20"
-                android:background="@color/bright_gold"
-                android:id="@+id/btn_course"/>
+                android:background="@color/yellow"
+                android:id="@+id/btn_course"
+                android:textColor="@color/colorBlack"/>
 
             <Button
                 android:layout_width="match_parent"
@@ -51,7 +52,8 @@
                 android:layout_marginLeft="@dimen/margin_20"
                 android:layout_marginRight="@dimen/margin_20"
                 android:id="@+id/btn_forum"
-                android:background="@color/bright_gold"/>
+                android:background="@color/yellow"
+                android:textColor="@color/colorBlack"/>
 
             <Button
                 android:layout_width="match_parent"
@@ -60,9 +62,10 @@
                 android:text="@string/user_panel"
                 android:layout_marginLeft="@dimen/margin_20"
                 android:layout_marginRight="@dimen/margin_20"
-                android:background="@color/bright_gold"
-                android:id="@+id/user_panel"/>
-            
+                android:background="@color/yellow"
+                android:id="@+id/user_panel"
+                android:textColor="@color/colorBlack"/>
+
 
         </LinearLayout>
 
@@ -79,7 +82,7 @@
     </RelativeLayout>
 
     <android.support.design.widget.NavigationView
-        android:layout_width="match_parent"
+        android:layout_width="280dp"
         android:layout_height="match_parent"
         android:id="@+id/navigation_drawer"
         android:layout_gravity="start"
