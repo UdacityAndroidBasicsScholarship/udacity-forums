@@ -10,7 +10,7 @@ import android.widget.Button;
 import android.widget.EditText;
 
 
-public class login_screen extends AppCompatActivity implements View.OnClickListener {
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
     EditText emailId;
     EditText password;
@@ -46,13 +46,13 @@ public class login_screen extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
 
             case R.id.sign_in_btn:
-                Intent i = new Intent(login_screen.this, sign_in_home.class);
+                Intent i = new Intent(LoginActivity.this, sign_in_home.class);
                 startActivity(i);
                 break;
 
             case R.id.sign_up_btn:
                 //goes to the registration screen.
-                Intent j = new Intent(login_screen.this, signUpHome.class);
+                Intent j = new Intent(LoginActivity.this, signUpHome.class);
                 startActivity(j);
                 break;
         }
