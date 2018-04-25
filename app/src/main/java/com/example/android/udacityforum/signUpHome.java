@@ -110,7 +110,7 @@ public class signUpHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (password.getText().toString().equalsIgnoreCase(confirmPassword.getText().toString())) {
-                    Intent intent = new Intent(signUpHome.this, login_screen.class);
+                    Intent intent = new Intent(signUpHome.this, LoginActivity.class);
                     startActivity(intent);
                 } else {
                     emailId.setError("Password mismatch");
