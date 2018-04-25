@@ -138,4 +138,11 @@ public class signUpHome extends AppCompatActivity {
         complete_reg.setTextColor(getResources().getColor(R.color.colorWhite));
     }
 
+    public void launchLoginScreen(View v) {
+        if (validateFields(entered_emailID, entered_password, entered_confirmPassword)) {
+            Intent intent = new Intent(this, LoginActivity.class);
+            startActivity(intent);
+            finish();
+        }
+    }
 }
