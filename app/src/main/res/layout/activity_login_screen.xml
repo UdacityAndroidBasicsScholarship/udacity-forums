@@ -59,7 +59,8 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="80dp"
         android:layout_below="@id/password_input"
-        android:layout_marginTop="50dp">
+        android:layout_marginTop="50dp"
+        android:id="@+id/linear1">
 
         <Button
             android:layout_width="0dp"
@@ -77,5 +78,18 @@
             android:id="@+id/sign_up_btn"/>
 
     </LinearLayout>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/google"
+        android:text="Google"
+        android:textSize="18sp"
+        android:textAllCaps="false"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="70dp"
+        android:background="@drawable/input"
+        android:layout_below="@id/linear1"
+        android:layout_marginTop="26dp"/>
 
 </RelativeLayout>
