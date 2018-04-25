@@ -28,8 +28,8 @@
 
 
         <activity android:name=".ForumActivity" />
-        <activity android:name=".login_screen" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".NewQuestionActivity" />
         <activity android:name=".sign_in_home" />
         <activity android:name=".signUpHome" />
