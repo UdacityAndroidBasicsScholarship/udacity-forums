@@ -11,7 +11,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".ForumActivity" />
         <activity android:name=".login_screen" />
-        <activity android:name=".MainActivity"> </activity>
+        <activity android:name=".MainActivity"></activity>
         <activity android:name=".NewQuestionActivity" />
         <activity android:name=".sign_in_home" />
         <activity android:name=".signUpHome" />
@@ -21,6 +21,12 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:name=".activity_userpanel"
+            android:label="@string/title_activity_userpanel"
+            android:theme="@style/AppTheme">
         </activity>
     </application>
 
