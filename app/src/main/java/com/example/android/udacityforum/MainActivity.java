@@ -1,9 +1,12 @@
 package com.example.android.udacityforum;
 
 import android.app.SearchManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -19,9 +22,12 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.facebook.accountkit.AccountKit;
+
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
+    NavigationView navigationView;
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     View actionBarView;
@@ -32,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        navigationView = findViewById(R.id.navigation_drawer);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         drawerLayout = (DrawerLayout) findViewById(R.id.nav_drawer);
         setSupportActionBar(toolbar);
@@ -52,6 +58,24 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(actionBarView, params);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        //adding listener to navigation drawer items
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.menu_logout) {
+                    if (AccountKit.getCurrentAccessToken() != null)
+                        AccountKit.logOut();
+                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
+                }
+                return false;
+            }
+        });
+
+
+
+
     }
 
     @Override
@@ -110,6 +134,11 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
 
         }
+    }
+
+    public void launchForumActivity(View v) {
+        Intent intent = new Intent(this, ForumActivity.class);
+        startActivity(intent);
     }
 
 }
