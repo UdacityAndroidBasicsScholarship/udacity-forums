@@ -68,6 +68,10 @@ public class MainActivity extends AppCompatActivity {
         menuInflater.inflate(R.menu.option_menu, menu);
 
         MenuItem searchItem = menu.findItem(R.id.action_search);
+        MenuItem home = menu.findItem(R.id.menu_home);
+        MenuItem course = menu.findItem(R.id.menu_course);
+        MenuItem profile = menu.findItem(R.id.menu_profile);
+        MenuItem logout = menu.findItem(R.id.menu_logout);
 
         SearchManager searchManager = (SearchManager) MainActivity.this.getSystemService(getApplicationContext().SEARCH_SERVICE);
 

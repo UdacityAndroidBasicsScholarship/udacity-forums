@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg"
+    android:background="@color/colorPrimaryDark"
     tools:context=".login_screen">
 
     <ImageView
@@ -29,7 +29,6 @@
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_below="@id/app_icon"
-        android:background="@drawable/input"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="90dp"
         android:layout_marginTop="60dp"
@@ -37,13 +36,15 @@
         android:paddingStart="15dp"
         android:inputType="textPersonName"
         android:paddingBottom="8dp"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        android:textColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:backgroundTint="@color/colorWhite"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_below="@id/username_input"
-        android:background="@drawable/input"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="90dp"
         android:layout_marginTop="16dp"
@@ -51,7 +52,11 @@
         android:paddingStart="15dp"
         android:inputType="textPassword"
         android:paddingBottom="8dp"
-        android:id="@+id/password_input"/>
+        android:id="@+id/password_input"
+        android:textColorHint="@color/colorWhite"
+        android:textColor="@color/colorWhite"
+        android:backgroundTint="@color/colorWhite"
+        android:drawableRight="@drawable/show_pw"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -65,17 +70,23 @@
         <Button
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="55dp"
-            android:background="@drawable/sign_in_btn"
-            android:id="@+id/sign_in_btn"/>
+            android:layout_height="wrap_content"
+            android:id="@+id/sign_in_btn"
+            android:text="Sign In"
+            android:textAllCaps="true"
+            style="@style/styleButton"
+            android:elevation="10dp"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_weight="1"
-            android:layout_height="55dp"
-            android:background="@drawable/sign_up_btn"
+            android:layout_height="wrap_content"
             android:layout_marginStart="45dp"
-            android:id="@+id/sign_up_btn"/>
+            android:id="@+id/sign_up_btn"
+            android:text="Sign Up"
+            android:textAllCaps="true"
+            style="@style/styleButton"
+            android:elevation="10dp"/>
 
     </LinearLayout>
 
