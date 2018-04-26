@@ -8,3 +8,12 @@ Its a forums app just like stack overflow or quora, where users can post their q
 ### Current Development-
 We are in phase one of development right now.
 To know more about development phases, read ProjectDevelopmentStages.pdf included in repo.
+
+## Project Maintained by:
+Sourabh Gupta
+Gaurav Kumar
+Pragati Rathore
+Akash Singh
+Harshit Vadhera
+Rahul Jhamb
+Aravind Balakrishnan
