@@ -62,7 +62,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
             case R.id.sign_up_btn:
                 //goes to the registration screen.
-                Intent j = new Intent(LoginActivity.this, signUpHome.class);
+                Intent j = new Intent(LoginActivity.this, SignUpHomeActivity.class);
                 startActivity(j);
                 break;
         }
@@ -131,7 +131,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void launchSignInActivity() {
-        Intent intent = new Intent(this, sign_in_home.class);
+        Intent intent = new Intent(this, SignInHomeActivity.class);
         startActivity(intent);
         finish();
     }
