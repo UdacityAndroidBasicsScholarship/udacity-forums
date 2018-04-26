@@ -10,10 +10,10 @@ We are in phase one of development right now.
 To know more about development phases, read ProjectDevelopmentStages.pdf included in repo.
 
 ## Project Maintained by:
-Sourabh Gupta
-Gaurav Kumar
-Pragati Rathore
-Akash Singh
-Harshit Vadhera
-Rahul Jhamb
-Aravind Balakrishnan
+Sourabh Gupta  
+Gaurav Kumar  
+Pragati Rathore  
+Akash Singh  
+Harshit Vadhera  
+Rahul Jhamb  
+Aravind Balakrishnan  
