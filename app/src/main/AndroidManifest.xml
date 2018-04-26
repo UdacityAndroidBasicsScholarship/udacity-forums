@@ -42,7 +42,7 @@
 
         </activity>
         <activity
-            android:name=".activity_userpanel"
+            android:name=".UserPanelActivity"
             android:label="@string/title_activity_userpanel"
             android:theme="@style/AppTheme">
         </activity>
