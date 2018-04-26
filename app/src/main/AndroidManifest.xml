@@ -31,9 +31,9 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".NewQuestionActivity" />
-        <activity android:name=".sign_in_home" />
-        <activity android:name=".signUpHome" />
-        <activity android:name=".splash_screen">
+        <activity android:name=".SignInHomeActivity" />
+        <activity android:name=".SignUpHomeActivity" />
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

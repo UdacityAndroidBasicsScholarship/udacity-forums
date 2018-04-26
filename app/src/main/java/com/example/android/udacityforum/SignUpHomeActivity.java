@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-public class signUpHome extends AppCompatActivity {
+public class SignUpHomeActivity extends AppCompatActivity {
 
     EditText name;
     EditText emailId;
@@ -110,7 +110,7 @@ public class signUpHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (password.getText().toString().equalsIgnoreCase(confirmPassword.getText().toString())) {
-                    Intent intent = new Intent(signUpHome.this, LoginActivity.class);
+                    Intent intent = new Intent(SignUpHomeActivity.this, LoginActivity.class);
                     startActivity(intent);
                 } else {
                     emailId.setError("Password mismatch");
