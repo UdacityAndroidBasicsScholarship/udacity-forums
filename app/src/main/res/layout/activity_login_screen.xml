@@ -64,7 +64,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="80dp"
         android:layout_below="@id/password_input"
+
         android:layout_marginTop="50dp">
+
+        android:layout_marginTop="30dp"
+        android:id="@+id/linear1">
+
 
         <Button
             android:layout_width="0dp"
