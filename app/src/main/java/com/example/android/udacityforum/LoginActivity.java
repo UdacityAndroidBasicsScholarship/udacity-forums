@@ -8,10 +8,18 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.facebook.accountkit.AccessToken;
+import com.facebook.accountkit.AccountKit;
+import com.facebook.accountkit.AccountKitLoginResult;
+import com.facebook.accountkit.ui.AccountKitActivity;
+import com.facebook.accountkit.ui.AccountKitConfiguration;
+import com.facebook.accountkit.ui.LoginType;
 
 
-public class login_screen extends AppCompatActivity implements View.OnClickListener {
-
+public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+    public static int APP_REQUEST_CODE = 99;
     EditText emailId;
     EditText password;
     Button sign_in;
@@ -22,7 +30,10 @@ public class login_screen extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login_screen);
-
+        AccessToken accessToken = AccountKit.getCurrentAccessToken();
+        if (accessToken != null) {
+            launchSignInActivity();
+        }
         emailId = (EditText) findViewById(R.id.username_input);
         password = (EditText) findViewById(R.id.password_input);
         sign_in = (Button) findViewById(R.id.sign_in_btn);
@@ -46,13 +57,12 @@ public class login_screen extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
 
             case R.id.sign_in_btn:
-                Intent i = new Intent(login_screen.this, sign_in_home.class);
-                startActivity(i);
+                launchSignInActivity();
                 break;
 
             case R.id.sign_up_btn:
                 //goes to the registration screen.
-                Intent j = new Intent(login_screen.this, signUpHome.class);
+                Intent j = new Intent(LoginActivity.this, signUpHome.class);
                 startActivity(j);
                 break;
         }
@@ -118,5 +128,35 @@ public class login_screen extends AppCompatActivity implements View.OnClickListe
         sign_in.setEnabled(false);
         sign_in.setTextColor(getResources().getColor(R.color.colorWhite));
         sign_up.setTextColor(getResources().getColor(R.color.colorBlack));
+    }
+
+    private void launchSignInActivity() {
+        Intent intent = new Intent(this, sign_in_home.class);
+        startActivity(intent);
+        finish();
+    }
+
+    //facebook and account_kit login methods
+    public void accountKitLogin(View v) {
+        Intent intent = new Intent(this, AccountKitActivity.class);
+        AccountKitConfiguration.AccountKitConfigurationBuilder configurationBuilder =
+                new AccountKitConfiguration.AccountKitConfigurationBuilder(LoginType.PHONE, AccountKitActivity.ResponseType.TOKEN);
+        intent.putExtra(AccountKitActivity.ACCOUNT_KIT_ACTIVITY_CONFIGURATION, configurationBuilder.build());
+        startActivityForResult(intent, APP_REQUEST_CODE);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == APP_REQUEST_CODE) {
+            AccountKitLoginResult loginResult = data.getParcelableExtra(AccountKitLoginResult.RESULT_KEY);
+            String toastMessage;
+            if (loginResult.getError() != null) {
+                toastMessage = loginResult.getError().getErrorType().getMessage();
+                Toast.makeText(getApplicationContext(), toastMessage, Toast.LENGTH_SHORT).show();
+            } else if (loginResult.getAccessToken() != null) {
+                launchSignInActivity();
+            }
+        }
     }
 }
