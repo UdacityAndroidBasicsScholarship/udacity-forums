@@ -7,7 +7,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
-        android:gravity="center_horizontal"
+        android:gravity="start"
         android:textStyle="bold"
         android:textSize="@dimen/fontSize_20"
         android:id="@+id/tv_heading"

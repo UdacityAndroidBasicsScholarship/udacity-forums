@@ -12,31 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <!--facebook login setup-->
-        <meta-data
-            android:name="com.facebook.accountkit.ApplicationName"
-            android:value="@string/app_name" />
-        <meta-data
-            android:name="com.facebook.sdk.ApplicationId"
-            android:value="@string/FACEBOOK_APP_ID" />
-        <meta-data
-            android:name="com.facebook.accountkit.ClientToken"
-            android:value="@string/ACCOUNT_KIT_CLIENT_TOKEN" />
-
-        <activity android:name="com.facebook.accountkit.ui.AccountKitActivity" />
-        <!-- login setup end-->
-
 
         <activity android:name=".ForumActivity" />
-        <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".NewQuestionActivity" />
-        <activity android:name=".sign_in_home" />
-        <activity android:name=".signUpHome" />
         <activity android:name=".splash_screen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
