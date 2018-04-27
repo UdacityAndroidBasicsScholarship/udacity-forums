@@ -6,5 +6,5 @@
     <dimen name="margin_10">10dp</dimen>
     <dimen name="margin_50">50dp</dimen>
     <dimen name="size_150">150dp</dimen>
-    <dimen name="size_65">65dp</dimen>
+    <dimen name="size_60">40dp</dimen>
 </resources>
