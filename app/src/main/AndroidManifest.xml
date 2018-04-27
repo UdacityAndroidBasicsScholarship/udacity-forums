@@ -33,7 +33,8 @@
         <activity android:name=".NewQuestionActivity" />
         <activity android:name=".sign_in_home" />
         <activity android:name=".signUpHome" />
-        <activity android:name=".splash_screen">
+        <activity android:name=".splash_screen"/>
+        <activity android:name=".ActivitySlider">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
