@@ -8,21 +8,21 @@
     tools:context=".login_screen">
 
     <ImageView
+        android:id="@+id/app_icon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/app_icon"
-        android:layout_marginTop="70dp"
         android:layout_marginStart="40dp"
-        android:id="@+id/app_icon"/>
+        android:layout_marginTop="70dp"
+        android:src="@drawable/app_icon" />
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/service_name"
-        android:layout_toEndOf="@id/app_icon"
         android:layout_alignBottom="@id/app_icon"
+        android:layout_marginBottom="25dp"
         android:layout_marginStart="20dp"
-        android:layout_marginBottom="25dp"/>
+        android:layout_toEndOf="@id/app_icon"
+        android:src="@drawable/service_name" />
 
     <EditText
         android:id="@+id/username_input"
@@ -32,60 +32,72 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="90dp"
         android:layout_marginTop="60dp"
+        android:backgroundTint="@color/colorWhite"
         android:hint="@string/emailid_2"
-        android:paddingStart="15dp"
         android:inputType="textPersonName"
         android:paddingBottom="8dp"
-        tools:ignore="HardcodedText"
-        android:textColorHint="@color/colorWhite"
+        android:paddingStart="15dp"
         android:textColor="@color/colorWhite"
-        android:backgroundTint="@color/colorWhite"/>
+        android:textColorHint="@color/colorWhite"
+        tools:ignore="HardcodedText" />
 
-    <EditText
+    <android.support.design.widget.TextInputLayout
+        android:id="@+id/password_input_parent"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_below="@id/username_input"
+        android:layout_below="@+id/username_input"
+        app:passwordToggleEnabled="true"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="90dp"
         android:layout_marginTop="16dp"
         android:hint="@string/password"
-        android:paddingStart="15dp"
-        android:inputType="textPassword"
-        android:paddingBottom="8dp"
-        android:id="@+id/password_input"
         android:textColorHint="@color/colorWhite"
         android:textColor="@color/colorWhite"
         android:backgroundTint="@color/colorWhite"
-        android:drawableRight="@drawable/show_pw"/>
+        >
+
+        <EditText
+            android:id="@+id/password_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:inputType="textPassword"
+            android:hint="@string/password"
+            android:paddingStart="15dp"
+            android:paddingBottom="8dp"
+            android:textColorHint="@color/colorWhite"
+            android:textColor="@color/colorWhite"
+            android:backgroundTint="@color/colorWhite"
+            />
+    </android.support.design.widget.TextInputLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/password_input_parent"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="80dp"
-        android:layout_below="@id/password_input"
         android:layout_marginTop="50dp">
 
         <Button
-            android:layout_width="0dp"
-            android:layout_weight="1"
-            android:layout_height="wrap_content"
             android:id="@+id/sign_in_btn"
-            android:text="Sign In"
-            android:textAllCaps="true"
             style="@style/styleButton"
-            android:elevation="10dp"/>
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:elevation="10dp"
+            android:text="Sign In"
+            android:textAllCaps="true" />
 
         <Button
+            android:id="@+id/sign_up_btn"
+            style="@style/styleButton"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
             android:layout_marginStart="45dp"
-            android:id="@+id/sign_up_btn"
+            android:layout_weight="1"
+            android:elevation="10dp"
             android:text="Sign Up"
-            android:textAllCaps="true"
-            style="@style/styleButton"
-            android:elevation="10dp"/>
+            android:textAllCaps="true" />
 
     </LinearLayout>
 

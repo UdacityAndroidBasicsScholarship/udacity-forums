@@ -30,8 +30,8 @@ public class signUpHome extends AppCompatActivity {
 
         name = findViewById(R.id.Fullname_input);
         emailId = findViewById(R.id.emailid_input);
-        password = findViewById(R.id.password_sign_up_input);
-        confirmPassword = findViewById(R.id.passwordconfirm_input);
+        password = findViewById(R.id.password_input);
+        confirmPassword = findViewById(R.id.password_input_confirm);
         complete_reg = findViewById(R.id.complete_reg_btn);
 //        disableBtn();
         init();
