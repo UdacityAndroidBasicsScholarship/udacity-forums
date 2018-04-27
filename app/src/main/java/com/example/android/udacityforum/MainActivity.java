@@ -19,10 +19,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import com.facebook.accountkit.AccountKit;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
     View actionBarView;
     TextView actionBarTitle;
     private ActionBar actionBar;
+    private Button btn_forum;
+    private Button btn_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +48,23 @@ public class MainActivity extends AppCompatActivity {
 
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
 
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                switch (id){
+                    case R.id.menu_profile:
+                        startActivity(new Intent(MainActivity.this, activity_userpanel.class));
+                        break;
+
+                    case R.id.menu_home:
+                        startActivity(new Intent(MainActivity.this, MainActivity.class));
+                        break;
+                }
+                return false;
+            }
+        });
+
         ActionBar.LayoutParams params = new ActionBar.LayoutParams(ActionBar.LayoutParams
                 .MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
         actionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_custom_view, null);
@@ -58,22 +76,25 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(actionBarView, params);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ham_icon);
 
-        //adding listener to navigation drawer items
-
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+        btn_forum = (Button)findViewById(R.id.btn_forum);
+        btn_forum.setOnClickListener(new View.OnClickListener() {
             @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if (item.getItemId() == R.id.menu_logout) {
-                    if (AccountKit.getCurrentAccessToken() != null)
-                        AccountKit.logOut();
-                    startActivity(new Intent(MainActivity.this, LoginActivity.class));
-                }
-                return false;
+            public void onClick(View view) {
+                Intent j = new Intent (MainActivity.this, ForumActivity.class);
+                startActivity(j);
             }
         });
-
-
+        btn_user = (Button)findViewById(R.id.user_panel);
+        btn_user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent k = new Intent(MainActivity.this, activity_userpanel.class);
+                startActivity(k);
+            }
+        });
 
 
     }
@@ -86,17 +107,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         MenuInflater menuInflater = getMenuInflater();
-
         menuInflater.inflate(R.menu.option_menu, menu);
-
         MenuItem searchItem = menu.findItem(R.id.action_search);
-        MenuItem home = menu.findItem(R.id.menu_home);
-        MenuItem course = menu.findItem(R.id.menu_course);
-        MenuItem profile = menu.findItem(R.id.menu_profile);
-        MenuItem logout = menu.findItem(R.id.menu_logout);
-
         SearchManager searchManager = (SearchManager) MainActivity.this.getSystemService(getApplicationContext().SEARCH_SERVICE);
 
         SearchView searchView = null;
@@ -134,11 +147,6 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
 
         }
-    }
-
-    public void launchForumActivity(View v) {
-        Intent intent = new Intent(this, ForumActivity.class);
-        startActivity(intent);
     }
 
 }

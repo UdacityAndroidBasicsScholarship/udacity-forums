@@ -32,7 +32,4 @@
     <string name="user_preferences">User preferences</string>
 
 
-    <!-- facebook details-->
-    <string name="FACEBOOK_APP_ID">386747795138002</string>
-    <string name="ACCOUNT_KIT_CLIENT_TOKEN">c8a99ff50a14f6edb08c1421f18e6e9a</string>
 </resources>
