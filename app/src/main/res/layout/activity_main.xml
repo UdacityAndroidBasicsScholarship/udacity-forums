@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context="com.example.android.udacityforum.MainActivity"
     android:id="@+id/nav_drawer">
 
@@ -53,7 +54,6 @@
                 android:layout_marginRight="@dimen/margin_20"
                 android:id="@+id/btn_forum"
                 android:background="@color/yellow"
-                android:onClick="launchForumActivity"
                 android:textColor="@color/colorBlack"/>
 
             <Button

@@ -19,7 +19,6 @@
     <string name="user_panel">User Panel</string>
     <string name="question">New Question</string>
     <string name="register">Register</string>
-
     <string name="title_activity_userpanel">activity_userpanel</string>
     <string name="tab_text_1">Summary</string>
     <string name="tab_text_2">Activity</string>
@@ -30,9 +29,11 @@
     <string name="user_activity">User Activity</string>
     <string name="user_summary">User Summary</string>
     <string name="user_preferences">User preferences</string>
+    <string name="title">Title</string>
+    <string name="body">Body</string>
+    <string name="submit">Submit</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="sign_up_using_google">Sign Up Using Google</string>
 
-
-    <!-- facebook details-->
-    <string name="FACEBOOK_APP_ID">386747795138002</string>
-    <string name="ACCOUNT_KIT_CLIENT_TOKEN">c8a99ff50a14f6edb08c1421f18e6e9a</string>
 </resources>

@@ -110,7 +110,7 @@ public class signUpHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (password.getText().toString().equalsIgnoreCase(confirmPassword.getText().toString())) {
-                    Intent intent = new Intent(signUpHome.this, LoginActivity.class);
+                    Intent intent = new Intent(signUpHome.this, login_screen.class);
                     startActivity(intent);
                 } else {
                     emailId.setError("Password mismatch");
@@ -138,11 +138,4 @@ public class signUpHome extends AppCompatActivity {
         complete_reg.setTextColor(getResources().getColor(R.color.colorWhite));
     }
 
-    public void launchLoginScreen(View v) {
-        if (validateFields(entered_emailID, entered_password, entered_confirmPassword)) {
-            Intent intent = new Intent(this, LoginActivity.class);
-            startActivity(intent);
-            finish();
-        }
-    }
 }
