@@ -53,6 +53,7 @@
                 android:layout_marginRight="@dimen/margin_20"
                 android:id="@+id/btn_forum"
                 android:background="@color/yellow"
+                android:onClick="launchForumActivity"
                 android:textColor="@color/colorBlack"/>
 
             <Button

@@ -11,7 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/app_icon"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="30dp"
         android:layout_marginStart="40dp"
         android:id="@+id/app_icon"/>
 
@@ -31,7 +31,7 @@
         android:layout_below="@id/app_icon"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="90dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:hint="@string/emailid_2"
         android:paddingStart="15dp"
         android:inputType="textPersonName"
@@ -59,12 +59,13 @@
         android:drawableRight="@drawable/show_pw"/>
 
     <LinearLayout
+        android:id="@+id/login_button_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="80dp"
         android:layout_below="@id/password_input"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="30dp"
         android:id="@+id/linear1">
 
         <Button
@@ -90,17 +91,25 @@
 
     </LinearLayout>
 
-    <Button
+    <TextView
+        android:id="@+id/facebook_login_textview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/google"
-        android:text="Google"
-        android:textSize="18sp"
-        android:textAllCaps="false"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="70dp"
-        android:background="@drawable/input"
-        android:layout_below="@id/linear1"
-        android:layout_marginTop="26dp"/>
+        android:layout_below="@id/login_button_linear_layout"
+        android:gravity="center"
+        android:paddingBottom="5dp"
+        android:paddingTop="10dp"
+        android:text="or Login Via"
+        android:textColor="#ffffff"
+        android:textSize="18sp" />
+
+    <Button
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_alignLeft="@id/login_button_linear_layout"
+        android:layout_below="@id/facebook_login_textview"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/phone_login"
+        android:onClick="accountKitLogin" />
 
 </RelativeLayout>
