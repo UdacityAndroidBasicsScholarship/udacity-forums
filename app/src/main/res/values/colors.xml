@@ -16,4 +16,7 @@
     <color name="colorlightyellow">#FFFF99</color>
     <color name="lightSkyBlue">#87CEFA</color>
     <color name="skyBlue">#87CEEB</color>
+    <color name="amber_500">#FFC107</color>
+    <color name="red_700">#D50000</color>
+    <color name="red_400">#FF1744</color>
 </resources>
