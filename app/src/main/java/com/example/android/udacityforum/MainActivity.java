@@ -1,9 +1,12 @@
 package com.example.android.udacityforum;
 
 import android.app.SearchManager;
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.PersistableBundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -16,23 +19,27 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     Toolbar toolbar;
+    NavigationView navigationView;
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle actionBarDrawerToggle;
     View actionBarView;
     TextView actionBarTitle;
     private ActionBar actionBar;
+    private Button btn_forum;
+    private Button btn_user;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        navigationView = findViewById(R.id.navigation_drawer);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         drawerLayout = (DrawerLayout) findViewById(R.id.nav_drawer);
         setSupportActionBar(toolbar);
@@ -40,6 +47,23 @@ public class MainActivity extends AppCompatActivity {
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_drawer, R.string.close_drawer);
 
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
+
+        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                int id = item.getItemId();
+                switch (id){
+                    case R.id.menu_profile:
+                        startActivity(new Intent(MainActivity.this, activity_userpanel.class));
+                        break;
+
+                    case R.id.menu_home:
+                        startActivity(new Intent(MainActivity.this, MainActivity.class));
+                        break;
+                }
+                return false;
+            }
+        });
 
         ActionBar.LayoutParams params = new ActionBar.LayoutParams(ActionBar.LayoutParams
                 .MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
@@ -52,6 +76,27 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(actionBarView, params);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ham_icon);
+
+        btn_forum = (Button)findViewById(R.id.btn_forum);
+        btn_forum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent j = new Intent (MainActivity.this, ForumActivity.class);
+                startActivity(j);
+            }
+        });
+        btn_user = (Button)findViewById(R.id.user_panel);
+        btn_user.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent k = new Intent(MainActivity.this, activity_userpanel.class);
+                startActivity(k);
+            }
+        });
+
+
     }
 
     @Override
@@ -62,13 +107,9 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-
         MenuInflater menuInflater = getMenuInflater();
-
         menuInflater.inflate(R.menu.option_menu, menu);
-
         MenuItem searchItem = menu.findItem(R.id.action_search);
-
         SearchManager searchManager = (SearchManager) MainActivity.this.getSystemService(getApplicationContext().SEARCH_SERVICE);
 
         SearchView searchView = null;

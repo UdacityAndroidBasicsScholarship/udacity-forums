@@ -21,13 +21,13 @@ public class splash_screen extends AppCompatActivity {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.clearFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
-            window.setStatusBarColor(getResources().getColor(R.color.notificationBar));
+            window.setStatusBarColor(getResources().getColor(R.color.colorBlack));
         }
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent j = new Intent(splash_screen.this, login_screen.class);
+                Intent j = new Intent(splash_screen.this, MainActivity.class);
                 startActivity(j);
                 finish();
             }

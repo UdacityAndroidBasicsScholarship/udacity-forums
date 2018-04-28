@@ -6,6 +6,37 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:actionMenuTextColor">@color/colorWhite</item>
+        <item name="android:textColorPrimary">@color/colorWhite</item>
+        <!--<item name="actionMenuTextColor">@color/colorWhite</item>-->
     </style>
+
+    <style name="robotoLight">
+        <item name="android:fontFamily">sans-serif-light</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="robotoMedium">
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="robotoRegular">
+        <item name="android:fontFamily">sans-serif-regular</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <style name="styleButton">
+        <item name="android:layout_height">170dp</item>
+        <item name="android:background">@drawable/button_selector</item>
+        <item name="android:fontFamily">@style/robotoMedium</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 
 </resources>

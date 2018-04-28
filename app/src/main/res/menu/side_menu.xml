@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android">
     <group android:checkableBehavior="single">
 
         <item
@@ -15,12 +16,12 @@
         <item
             android:id="@+id/menu_profile"
             android:icon="@android:drawable/btn_radio"
-            android:title="MyProfile"/>
+            android:title="MyProfile" />
 
         <item
             android:id="@+id/menu_logout"
             android:icon="@android:drawable/btn_radio"
-            android:title="Logout"/>
+            android:title="Logout" />
     </group>
 
 
