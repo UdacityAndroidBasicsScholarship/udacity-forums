@@ -19,4 +19,8 @@
     <color name="amber_500">#FFC107</color>
     <color name="red_700">#D50000</color>
     <color name="red_400">#FF1744</color>
+    <color name="pink_300">#F06292</color>.
+    <color name="cyan_A400">#00E5FF</color>
+    <color name="cyan_A700">#00B8D4</color>
+    <color name="lightGreen_A400">#76FF03</color>
 </resources>
