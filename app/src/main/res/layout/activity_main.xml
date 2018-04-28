@@ -40,9 +40,10 @@
                 android:text="@string/courses"
                 android:layout_marginLeft="@dimen/margin_20"
                 android:layout_marginRight="@dimen/margin_20"
-                android:background="@color/yellow"
+                android:textSize="20sp"
+                android:background="@color/amber_500"
                 android:id="@+id/btn_course"
-                android:textColor="@color/colorBlack"/>
+                android:textColor="@color/red_700"/>
 
             <Button
                 android:layout_width="match_parent"
@@ -51,9 +52,10 @@
                 android:text="@string/discussion_form"
                 android:layout_marginLeft="@dimen/margin_20"
                 android:layout_marginRight="@dimen/margin_20"
+                android:textSize="20sp"
                 android:id="@+id/btn_forum"
-                android:background="@color/yellow"
-                android:textColor="@color/colorBlack"/>
+                android:background="@color/amber_500"
+                android:textColor="@color/red_700"/>
 
             <Button
                 android:layout_width="match_parent"
@@ -62,9 +64,10 @@
                 android:text="@string/user_panel"
                 android:layout_marginLeft="@dimen/margin_20"
                 android:layout_marginRight="@dimen/margin_20"
-                android:background="@color/yellow"
+                android:background="@color/amber_500"
                 android:id="@+id/user_panel"
-                android:textColor="@color/colorBlack"/>
+                android:textSize="20sp"
+                android:textColor="@color/red_700"/>
 
 
         </LinearLayout>
