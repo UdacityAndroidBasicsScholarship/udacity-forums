@@ -20,11 +20,22 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
+import com.firebase.ui.auth.AuthUI;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Arrays;
+
 public class MainActivity extends AppCompatActivity {
 
+    TextView UserEmail;
+    ImageView UserPic;
+    TextView UserName;
     Toolbar toolbar;
     NavigationView navigationView;
     DrawerLayout drawerLayout;
@@ -34,32 +45,78 @@ public class MainActivity extends AppCompatActivity {
     private ActionBar actionBar;
     private Button btn_forum;
     private Button btn_user;
+    private FirebaseAuth mFirebaseAuth;
+    private FirebaseAuth.AuthStateListener mAuthStateListener;
+    public static final int RC_SIGN_IN = 1;
+    private FirebaseUser userDetails;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //navigation view.
         navigationView = findViewById(R.id.navigation_drawer);
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         drawerLayout = (DrawerLayout) findViewById(R.id.nav_drawer);
         setSupportActionBar(toolbar);
-
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_drawer, R.string.close_drawer);
-
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
 
+        //setting values to navigation drawer header.
+        View header = navigationView.getHeaderView(0);
+        UserName = (TextView) header.findViewById(R.id.tv_name);
+        UserPic = (ImageView) header.findViewById(R.id.iv_profile);
+        UserEmail = (TextView) header.findViewById(R.id.tv_email);
+
+        //Firebase authentication.
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        mAuthStateListener = new FirebaseAuth.AuthStateListener() {
+            @Override
+            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
+                userDetails = firebaseAuth.getCurrentUser();
+                if (userDetails != null){
+                    //user is signed in.
+                    UserName.setText(userDetails.getDisplayName());
+                    Glide.with(MainActivity.this).load(userDetails.getPhotoUrl()).into(UserPic);
+                    UserEmail.setText(userDetails.getEmail());
+                }else{
+                    //user is signed out.
+                    startActivityForResult(
+                            AuthUI.getInstance()
+                                    .createSignInIntentBuilder()
+                                    .setIsSmartLockEnabled(false)
+                                    .setAvailableProviders(Arrays.asList(
+                                            new AuthUI.IdpConfig.EmailBuilder().build(),
+                                            new AuthUI.IdpConfig.GoogleBuilder().build(),
+                                            new AuthUI.IdpConfig.FacebookBuilder().build()))
+                                    .build(),
+                            RC_SIGN_IN);
+
+                }
+            }
+        };
+
+        //on item click in navigation side bar.
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
                 switch (id){
                     case R.id.menu_profile:
-                        startActivity(new Intent(MainActivity.this, activity_userpanel.class));
+                        Intent k = new Intent(MainActivity.this, activity_userpanel.class);
+                        k.putExtra("name2", userDetails.getDisplayName());
+                        k.putExtra("picURL2", userDetails.getPhotoUrl().toString());
+                        k.putExtra("Email2", userDetails.getEmail());
+                        startActivity(k);
                         break;
 
                     case R.id.menu_home:
                         startActivity(new Intent(MainActivity.this, MainActivity.class));
                         break;
+                    case R.id.menu_logout:
+                        AuthUI.getInstance().signOut(MainActivity.this);
+                        finish();
                 }
                 return false;
             }
@@ -84,6 +141,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent j = new Intent (MainActivity.this, ForumActivity.class);
+                j.putExtra("name", userDetails.getDisplayName());
+                j.putExtra("picURL", userDetails.getPhotoUrl().toString());
+                j.putExtra("Email", userDetails.getEmail());
                 startActivity(j);
             }
         });
@@ -92,11 +152,28 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent k = new Intent(MainActivity.this, activity_userpanel.class);
+                k.putExtra("name2", userDetails.getDisplayName());
+                k.putExtra("picURL2", userDetails.getPhotoUrl().toString());
+                k.putExtra("Email2", userDetails.getEmail());
                 startActivity(k);
             }
         });
 
 
+
+
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == RC_SIGN_IN){
+            if (resultCode == RESULT_OK){
+                Toast.makeText(this, "Signed In", Toast.LENGTH_SHORT).show();
+            }else if(resultCode == RESULT_CANCELED){
+                finish();
+            }
+        }
     }
 
     @Override
@@ -147,6 +224,24 @@ public class MainActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
 
         }
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        if(mAuthStateListener != null){
+            mFirebaseAuth.removeAuthStateListener(mAuthStateListener);
+        }
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        mFirebaseAuth.addAuthStateListener(mAuthStateListener);
+    }
+
+    public void export(){
+
     }
 
 }
