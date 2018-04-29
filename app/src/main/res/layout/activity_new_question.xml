@@ -7,14 +7,17 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
         android:text="Title"/>
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/title"/>
     <TextView
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="20sp"
         android:text="Body"/>
     <EditText
         android:layout_width="match_parent"
@@ -25,7 +28,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Submit"
+        android:textSize="@dimen/fontSize_20"
         android:id="@+id/submit"
+        android:textColor="@color/cyan_A700"
+        android:background="@color/amber_500"
         android:onClick="submitQuestion"/>
 
 
