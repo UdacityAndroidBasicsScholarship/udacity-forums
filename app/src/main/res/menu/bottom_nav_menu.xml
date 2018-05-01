@@ -4,15 +4,15 @@
     <item
         android:id="@+id/navigation_songs"
         android:icon="@drawable/plus"
-        android:title=""/>
+        android:title="" />
 
     <item
         android:id="@+id/navigation_albums"
         android:icon="@drawable/plus"
-        android:title=""/>
+        android:title="" />
 
     <item
         android:id="@+id/navigation_artists"
         android:icon="@drawable/plus"
-        android:title=""/>
+        android:title="" />
 </menu>
