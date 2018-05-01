@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="@dimen/size_150"
     android:background="@color/colorButtonYellow">
 
     <com.example.android.udacityforum.CustomeRoundedImage
+        android:id="@+id/iv_profile"
         android:layout_width="@dimen/size_100"
         android:layout_height="@dimen/size_100"
-        android:id="@+id/iv_profile"
         android:layout_marginLeft="@dimen/margin_20"
         android:layout_marginTop="@dimen/margin_20"
-        android:src="@drawable/android_logo"/>
+        android:src="@drawable/android_logo" />
 
     <TextView
+        android:id="@+id/tv_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_name"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginTop="@dimen/margin_50"
         android:layout_toRightOf="@id/iv_profile"
         android:text="@string/username"
-        android:layout_marginLeft="@dimen/margin_10"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/margin_50"/>
+        android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/tv_email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@id/tv_name"
+        android:layout_marginLeft="@dimen/margin_10"
+        android:layout_marginTop="5dp"
         android:layout_toRightOf="@id/iv_profile"
         android:text="E-mail"
-        android:id="@+id/tv_email"
-        android:layout_marginLeft="@dimen/margin_10"
-        android:textStyle="bold"
-        android:layout_below="@id/tv_name"
-        android:layout_marginTop="5dp"/>
+        android:textStyle="bold" />
 
 </RelativeLayout>

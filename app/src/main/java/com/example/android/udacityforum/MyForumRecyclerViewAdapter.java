@@ -17,24 +17,26 @@ class MyForumRecyclerViewAdapter extends RecyclerView.Adapter<MyForumRecyclerVie
     private ArrayList<QuestionFormat> quesList;
     private LayoutInflater inflater;
     private Context context;
-    public MyForumRecyclerViewAdapter(ArrayList<QuestionFormat> list, Context context){
-        this.quesList=list;
-        this.context=context;
+
+    public MyForumRecyclerViewAdapter(ArrayList<QuestionFormat> list, Context context) {
+        this.quesList = list;
+        this.context = context;
     }
+
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        inflater=LayoutInflater.from(parent.getContext());
-        View v=inflater.inflate(R.layout.recycler_view_item,parent,false);
+        inflater = LayoutInflater.from(parent.getContext());
+        View v = inflater.inflate(R.layout.recycler_view_item, parent, false);
         return new ViewHolder(v);
     }
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        Drawable drawable= ContextCompat.getDrawable(context,R.drawable.app_icon);
-        drawable.setBounds(0,0,70,70);
+        Drawable drawable = ContextCompat.getDrawable(context, R.drawable.app_icon);
+        drawable.setBounds(0, 0, 70, 70);
         holder.contentTextView.setText(quesList.get(position).getQuesContent());
         holder.headingTextView.setText(quesList.get(position).getQuesHeading());
-        holder.headingTextView.setCompoundDrawables(drawable,null,null,null);
+        holder.headingTextView.setCompoundDrawables(drawable, null, null, null);
         holder.headingTextView.setCompoundDrawablePadding(50);
     }
 
@@ -47,20 +49,21 @@ class MyForumRecyclerViewAdapter extends RecyclerView.Adapter<MyForumRecyclerVie
         TextView headingTextView;
         TextView contentTextView;
         CardView animated_card;
+
         public ViewHolder(View itemView) {
             super(itemView);
-            headingTextView=itemView.findViewById(R.id.recycler_heading);
-            contentTextView=itemView.findViewById(R.id.recycler_content_description);
+            headingTextView = itemView.findViewById(R.id.recycler_heading);
+            contentTextView = itemView.findViewById(R.id.recycler_content_description);
             contentTextView.setVisibility(View.GONE);
-            animated_card=itemView.findViewById(R.id.animated_card);
+            animated_card = itemView.findViewById(R.id.animated_card);
             animated_card.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                    if(contentTextView.getVisibility()==View.GONE){
+                    if (contentTextView.getVisibility() == View.GONE) {
                         TransitionManager.beginDelayedTransition(animated_card);
                         contentTextView.setVisibility(View.VISIBLE);
-                    }else{
+                    } else {
                         contentTextView.setVisibility(View.GONE);
                         TransitionManager.beginDelayedTransition(animated_card);
                     }

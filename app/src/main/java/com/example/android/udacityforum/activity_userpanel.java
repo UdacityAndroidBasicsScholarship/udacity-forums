@@ -29,6 +29,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.android.udacityforum.Fragments.userPanelFragment1;
+import com.example.android.udacityforum.Fragments.userPanelFragment2;
+import com.example.android.udacityforum.Fragments.userPanelFragment3;
+import com.example.android.udacityforum.Fragments.userPanelFragment4;
 import com.firebase.ui.auth.AuthUI;
 
 import java.io.IOException;
@@ -72,7 +76,7 @@ public class activity_userpanel extends AppCompatActivity {
         setContentView(R.layout.activity_userpanel);
 
         //For selecting picture from device when clicked on the imageButton.
-        fab11 = (ImageButton)findViewById(R.id.fab11);
+        fab11 = (ImageButton) findViewById(R.id.fab11);
         fab11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,9 +88,9 @@ public class activity_userpanel extends AppCompatActivity {
         });
 
 
-        pic = (ImageView)findViewById(R.id.imageButton);
-        userNameLayout = (TextView)findViewById(R.id.textView);
-        emailLayout = (TextView)findViewById(R.id.textView2);
+        pic = (ImageView) findViewById(R.id.imageButton);
+        userNameLayout = (TextView) findViewById(R.id.textView);
+        emailLayout = (TextView) findViewById(R.id.textView2);
 
         final String name2 = getIntent().getExtras().getString("name2");
         final String picURL2 = getIntent().getExtras().getString("picURL2");
@@ -256,8 +260,7 @@ public class activity_userpanel extends AppCompatActivity {
         }
     }
 
-    public void AppExit()
-    {
+    public void AppExit() {
 
         this.finish();
         Intent intent = new Intent(Intent.ACTION_MAIN);
@@ -269,7 +272,6 @@ public class activity_userpanel extends AppCompatActivity {
     android.os.Process.killProcess(pid);*/
 
     }
-
 
 
 }

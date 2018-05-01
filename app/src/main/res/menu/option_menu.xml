@@ -4,26 +4,30 @@
     <item
         android:id="@+id/action_search"
         android:icon="@android:drawable/ic_menu_search"
-        app:showAsAction="always|collapseActionView"
+        android:title="Search"
         app:actionViewClass="android.support.v7.widget.SearchView"
-        android:title="Search"/>
+        app:showAsAction="always|collapseActionView" />
 
-    <item android:id="@+id/action_new"
+    <item
+        android:id="@+id/action_new"
         android:title="New"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 
-    <item android:id="@+id/action_top"
+    <item
+        android:id="@+id/action_top"
         android:title="Top"
-        app:showAsAction="never"/>
+        app:showAsAction="never" />
 
-    <item android:id="@+id/action_unread"
+    <item
+        android:id="@+id/action_unread"
+        android:icon="@android:drawable/btn_minus"
         android:title="Unread"
-        app:showAsAction="never"
-        android:icon="@android:drawable/btn_minus" />
+        app:showAsAction="never" />
 
-    <item android:id="@+id/action_badges"
+    <item
+        android:id="@+id/action_badges"
+        android:icon="@android:drawable/btn_minus"
         android:title="Badges"
-        app:showAsAction="never"
-        android:icon="@android:drawable/btn_minus" />
+        app:showAsAction="never" />
 
 </menu>
