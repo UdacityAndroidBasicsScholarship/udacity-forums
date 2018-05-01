@@ -44,7 +44,8 @@
             android:layout_below="@+id/txt_ask_new_que"
             android:layout_marginTop="10dp"
             app:hintTextAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-            android:textColorHint="@android:color/black">
+            android:textColorHint="@android:color/black"
+            >
 
             <EditText
                 android:id="@+id/title"
@@ -54,7 +55,7 @@
                 android:hint="Title"
                 android:padding="10dp"
                 android:inputType="textMultiLine"
-                android:textColorHint="@android:color/white"
+                android:textColor="@android:color/black"
                 android:background="@drawable/square_bg"
                  />
         </android.support.design.widget.TextInputLayout>
@@ -78,7 +79,8 @@
             android:layout_below="@+id/txt_ask_new_que"
             android:layout_marginTop="10dp"
             app:hintTextAppearance="@style/Base.TextAppearance.AppCompat.Medium"
-            android:textColorHint="@android:color/black">
+            android:textColorHint="@android:color/black"
+            >
 
             <EditText
                 android:id="@+id/body"
@@ -87,7 +89,7 @@
                 android:hint="Body"
                 android:lines="10"
                 android:gravity="top"
-                android:textColor="@android:color/white"
+                android:textColor="@android:color/black"
                 android:textColorHint="@android:color/white"
                 android:background="@drawable/square_bg"
                 android:padding="10dp"
@@ -106,7 +108,6 @@
         android:text="Submit"
         android:background="@drawable/input"
         android:paddingBottom="5dp"
-
         android:textColor="#000000"
         android:textSize="@dimen/fontSize_20"
         android:layout_alignParentBottom="true"/>
