@@ -2,16 +2,40 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:background="@drawable/bg"
+    android:orientation="vertical"
+    android:padding="8dp">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:padding="16dp"
+        android:text="Ask new Question"
+        android:textColor="#ffffff"
+        android:textSize="26sp"
+        android:textStyle="bold" />
+
+    <View
+        android:layout_width="250dp"
+        android:layout_height="2dp"
+        android:layout_marginBottom="40dp"
+        android:layout_marginLeft="16dp"
+        android:background="#ffffff" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
         android:text="Title"
+        android:padding="8dp"
+        android:textColor="#ffffff"
         android:textSize="20sp" />
 
     <EditText
         android:id="@+id/title"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
@@ -20,21 +44,29 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Body"
+        android:fontFamily="serif"
+        android:padding="8dp"
+        android:textColor="#ffffff"
         android:textSize="20sp" />
 
     <EditText
         android:id="@+id/body"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp" />
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:background="@color/amber_500"
         android:onClick="submitQuestion"
         android:text="Submit"
-        android:textColor="@color/cyan_A700"
+        android:background="@drawable/input"
+        android:paddingBottom="5dp"
+        android:layout_margin="16dp"
+        android:textColor="#000000"
         android:textSize="@dimen/fontSize_20" />
 
 
