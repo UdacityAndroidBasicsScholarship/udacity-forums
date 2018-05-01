@@ -59,15 +59,13 @@
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:onClick="submitQuestion"
         android:text="Submit"
+        android:background="@drawable/input"
+        android:paddingBottom="5dp"
         android:layout_margin="16dp"
-        android:paddingBottom="16dp"
-        android:paddingLeft="26dp"
-        android:paddingRight="26dp"
-        android:paddingTop="16dp"
         android:textColor="#000000"
         android:textSize="@dimen/fontSize_20" />
 
