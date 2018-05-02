@@ -169,8 +169,8 @@ public class ForumActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-    public void AppExit()
-    {
+
+    public void AppExit() {
 
         this.finish();
         Intent intent = new Intent(Intent.ACTION_MAIN);

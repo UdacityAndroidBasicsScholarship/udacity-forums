@@ -75,12 +75,12 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 userDetails = firebaseAuth.getCurrentUser();
-                if (userDetails != null){
+                if (userDetails != null) {
                     //user is signed in.
                     UserName.setText(userDetails.getDisplayName());
                     Glide.with(MainActivity.this).load(userDetails.getPhotoUrl()).into(UserPic);
                     UserEmail.setText(userDetails.getEmail());
-                }else{
+                } else {
                     //user is signed out.
                     startActivityForResult(
                             AuthUI.getInstance()
@@ -102,7 +102,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 int id = item.getItemId();
-                switch (id){
+                switch (id) {
                     case R.id.menu_profile:
                         Intent k = new Intent(MainActivity.this, activity_userpanel.class);
                         k.putExtra("name2", userDetails.getDisplayName());
@@ -136,18 +136,18 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ham_icon);
 
-        btn_forum = (Button)findViewById(R.id.btn_forum);
+        btn_forum = (Button) findViewById(R.id.btn_forum);
         btn_forum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent j = new Intent (MainActivity.this, ForumActivity.class);
+                Intent j = new Intent(MainActivity.this, ForumActivity.class);
                 j.putExtra("name", userDetails.getDisplayName());
                 j.putExtra("picURL", userDetails.getPhotoUrl().toString());
                 j.putExtra("Email", userDetails.getEmail());
                 startActivity(j);
             }
         });
-        btn_user = (Button)findViewById(R.id.user_panel);
+        btn_user = (Button) findViewById(R.id.user_panel);
         btn_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -160,17 +160,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-
-
     }
 
     @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode == RC_SIGN_IN){
-            if (resultCode == RESULT_OK){
+        if (requestCode == RC_SIGN_IN) {
+            if (resultCode == RESULT_OK) {
                 Toast.makeText(this, "Signed In", Toast.LENGTH_SHORT).show();
-            }else if(resultCode == RESULT_CANCELED){
+            } else if (resultCode == RESULT_CANCELED) {
                 finish();
             }
         }
@@ -229,7 +227,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onPause() {
         super.onPause();
-        if(mAuthStateListener != null){
+        if (mAuthStateListener != null) {
             mFirebaseAuth.removeAuthStateListener(mAuthStateListener);
         }
     }
@@ -240,7 +238,7 @@ public class MainActivity extends AppCompatActivity {
         mFirebaseAuth.addAuthStateListener(mAuthStateListener);
     }
 
-    public void export(){
+    public void export() {
 
     }
 
