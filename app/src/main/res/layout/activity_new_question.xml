@@ -1,73 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/bg"
     android:orientation="vertical"
     android:padding="8dp">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:padding="16dp"
-        android:text="Ask new Question"
-        android:textColor="#ffffff"
-        android:textSize="26sp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content">
 
-    <View
-        android:layout_width="250dp"
-        android:layout_height="2dp"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="16dp"
-        android:background="#ffffff" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/app_icon"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:id="@+id/app_icon" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:padding="8dp"
-        android:text="Title"
-        android:textColor="#ffffff"
-        android:textSize="20sp" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/service_name"
+            android:layout_toEndOf="@id/app_icon"
+            android:layout_alignBottom="@id/app_icon"
+            android:layout_marginBottom="22dp"
+            android:layout_marginStart="30dp"
+            android:id="@+id/app_name"/>
 
-    <EditText
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_icon"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/roboto_slab"
+            android:text="@string/enter_your_question_please"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="serif"
-        android:padding="8dp"
-        android:text="Body"
-        android:textColor="#ffffff"
-        android:textSize="20sp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="35dp"
+            android:layout_below="@id/app_name"
+            android:layout_marginTop="80dp"
+            android:hint="@string/course_code"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:inputType="number"
+            android:id="@+id/course_code"/>
 
-    <EditText
-        android:id="@+id/body"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="35dp"
+            android:layout_below="@id/course_code"
+            android:layout_marginTop="20dp"
+            android:hint="@string/type_title_or_paste_a_link"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:inputType="textEmailSubject"
+            android:id="@+id/Title"/>
 
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:background="@drawable/input"
-        android:onClick="submitQuestion"
-        android:paddingBottom="5dp"
-        android:text="Submit"
-        android:textColor="#000000"
-        android:textSize="@dimen/fontSize_20" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round"
+            android:padding="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="35dp"
+            android:layout_below="@id/Title"
+            android:layout_marginTop="20dp"
+            android:hint="@string/details"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:inputType="textMultiLine"
+            android:id="@+id/details"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/details"
+            android:background="@drawable/submit"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="40dp"/>
 
 
-</LinearLayout>
+
+
+
+    </RelativeLayout>
+
+</ScrollView>
+
+
+
+
+
+
