@@ -31,11 +31,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="serif"
-        android:text="Title"
         android:padding="8dp"
+        android:text="Title"
         android:textColor="#ffffff"
         android:textSize="20sp"
         android:visibility="gone"/>
+
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/input_layout_title"
@@ -60,13 +61,21 @@
                  />
         </android.support.design.widget.TextInputLayout>
 
+    <EditText
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp" />
+
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="Body"
         android:fontFamily="serif"
         android:padding="8dp"
+        android:text="Body"
         android:textColor="#ffffff"
         android:textSize="20sp"
         android:visibility="gone"/>
@@ -104,10 +113,11 @@
         android:id="@+id/submit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="submitQuestion"
-        android:text="Submit"
+        android:layout_margin="16dp"
         android:background="@drawable/input"
+        android:onClick="submitQuestion"
         android:paddingBottom="5dp"
+        android:text="Submit"
         android:textColor="#000000"
         android:textSize="@dimen/fontSize_20"
         android:layout_alignParentBottom="true"/>

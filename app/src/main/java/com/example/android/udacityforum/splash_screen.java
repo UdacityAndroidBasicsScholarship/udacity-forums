@@ -31,6 +31,6 @@ public class splash_screen extends AppCompatActivity {
                 startActivity(j);
                 finish();
             }
-        },SPLASH_TIME_OUT);
+        }, SPLASH_TIME_OUT);
     }
 }

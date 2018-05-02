@@ -31,8 +31,8 @@
             android:id="@+id/main_content"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:fitsSystemWindows="true"
-            android:layout_below="@id/ll_header">
+            android:layout_below="@id/ll_header"
+            android:fitsSystemWindows="true">
 
             <android.support.design.widget.AppBarLayout
                 android:id="@+id/appbar"
@@ -102,9 +102,9 @@
                             android:layout_height="30dp"
                             android:layout_alignBottom="@+id/view2"
                             android:layout_alignStart="@+id/textView"
+                            android:layout_marginBottom="4dp"
                             android:text="Email"
-                            android:textSize="16sp"
-                            android:layout_marginBottom="4dp"/>
+                            android:textSize="16sp" />
 
 
                     </RelativeLayout>
@@ -156,7 +156,6 @@
 
 
         </android.support.design.widget.CoordinatorLayout>
-
 
 
     </RelativeLayout>

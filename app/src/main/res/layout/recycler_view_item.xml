@@ -1,40 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
-<android.support.v7.widget.CardView
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:id="@+id/animated_card"
-    android:layout_margin="2dp"
-    app:cardCornerRadius="10dp"
-    app:cardBackgroundColor="#ffffef">
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
-    <TextView
-        android:layout_width="match_parent"
-        android:id="@+id/recycler_heading"
-        android:layout_height="wrap_content"
-        tools:text="Heading"
-        android:maxLines="1"
-        android:textSize="22sp"
-        android:layout_marginBottom="8dp"/>
-    <TextView
-        android:id="@+id/recycler_content_description"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:text="Content Description"
-        android:textSize="18sp"
-        android:paddingLeft="60dp"/>
-</LinearLayout>
-</android.support.v7.widget.CardView>
+    android:orientation="vertical">
 
+    <android.support.v7.widget.CardView
+        android:id="@+id/animated_card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="2dp"
+        app:cardBackgroundColor="#ffffef"
+        app:cardCornerRadius="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/recycler_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:maxLines="1"
+                android:textSize="22sp"
+                tools:text="Heading" />
+
+            <TextView
+                android:id="@+id/recycler_content_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="60dp"
+                android:textSize="18sp"
+                tools:text="Content Description" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
 
 
 </FrameLayout>

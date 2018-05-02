@@ -3,9 +3,10 @@ package com.example.android.udacityforum;
 class QuestionFormat {
     private String quesHeading;
     private String quesContent;
-    public QuestionFormat(String heading,String content){
-        this.quesContent=content;
-        this.quesHeading=heading;
+
+    public QuestionFormat(String heading, String content) {
+        this.quesContent = content;
+        this.quesHeading = heading;
     }
 
     public String getQuesHeading() {
