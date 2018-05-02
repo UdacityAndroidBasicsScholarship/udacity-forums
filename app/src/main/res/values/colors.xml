@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#121212</color>
     <color name="colorWhite">#ffffff</color>
     <color name="dodger_blue">#1589FF</color>
     <color name="ocean_blue">#2B65EC</color>
