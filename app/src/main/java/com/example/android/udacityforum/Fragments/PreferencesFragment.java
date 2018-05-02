@@ -8,12 +8,12 @@ import android.view.ViewGroup;
 
 import com.example.android.udacityforum.R;
 
-public class userPanelFragment2 extends Fragment {
+public class PreferencesFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_activity_userpanel, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_preferences_userpanel, container, false);
         return rootView;
     }
 }

@@ -1,9 +1,5 @@
 package com.example.android.udacityforum;
 
-/**
- * Created by PragatiRathore on 01-04-2018.
- */
-
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
@@ -15,20 +11,20 @@ import android.graphics.PorterDuffXfermode;
 import android.graphics.Rect;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
+import android.support.v7.widget.AppCompatImageView;
 import android.util.AttributeSet;
-import android.widget.ImageView;
 
-public class CustomeRoundedImage extends ImageView {
+public class CustomRoundedImage extends AppCompatImageView {
 
-    public CustomeRoundedImage(Context context) {
+    public CustomRoundedImage(Context context) {
         super(context);
     }
 
-    public CustomeRoundedImage(Context context, AttributeSet attrs) {
+    public CustomRoundedImage(Context context, AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public CustomeRoundedImage(Context context, AttributeSet attrs, int defStyle) {
+    public CustomRoundedImage(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
 
