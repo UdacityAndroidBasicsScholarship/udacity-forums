@@ -18,9 +18,7 @@ public class ActivitySlider extends AppCompatActivity {
     private SliderAdapter sliderAdapter;
 
 
-
-
-    private  int nCurrentPage;
+    private int nCurrentPage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +29,6 @@ public class ActivitySlider extends AppCompatActivity {
 
         mSlideViewPager = (ViewPager) findViewById(R.id.slideviewpager);
         mDotsLayout = (LinearLayout) findViewById(R.id.dotslayout);
-
 
 
         sliderAdapter = new SliderAdapter(this);
@@ -53,12 +50,12 @@ public class ActivitySlider extends AppCompatActivity {
 
             mDotsLayout.addView(mDots[i]);
         }
-        if(mDots.length>0){
+        if (mDots.length > 0) {
             mDots[position].setTextColor(getResources().getColor(R.color.colorWhite));
         }
     }
 
-    ViewPager.OnPageChangeListener viewListener=new ViewPager.OnPageChangeListener(){
+    ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
 
         @Override
         public void onPageScrolled(int i, float v, int i1) {
@@ -70,11 +67,10 @@ public class ActivitySlider extends AppCompatActivity {
 
             addDOtsIndicator(i);
 
-            nCurrentPage=i;
+            nCurrentPage = i;
 
 
         }
-
 
 
         @Override
@@ -82,8 +78,9 @@ public class ActivitySlider extends AppCompatActivity {
 
         }
     };
+
     public void sendMessage(View view) {
-        Intent intent = new Intent(this,MainActivity.class);
+        Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
     }
 }
