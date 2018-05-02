@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:src="@drawable/app_icon"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="30dp"
             android:id="@+id/app_icon" />
 
         <ImageView
@@ -48,6 +48,7 @@
             android:layout_below="@id/app_name"
             android:layout_marginTop="80dp"
             android:hint="@string/course_code"
+            android:textColor="#000000"
             android:paddingLeft="10dp"
             android:paddingBottom="5dp"
             android:inputType="number"
@@ -61,6 +62,7 @@
             android:layout_marginEnd="35dp"
             android:layout_below="@id/course_code"
             android:layout_marginTop="10dp"
+            android:textColor="#000000"
             android:hint="@string/type_title_or_paste_a_link"
             android:paddingLeft="10dp"
             android:paddingBottom="5dp"
@@ -75,6 +77,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginEnd="35dp"
             android:layout_below="@id/Title"
+            android:textColor="#000000"
             android:layout_marginTop="10dp"
             android:hint="@string/details"
             android:paddingLeft="10dp"
@@ -88,11 +91,8 @@
             android:layout_below="@id/details"
             android:background="@drawable/submit"
             android:layout_marginTop="20dp"
-            android:layout_marginStart="40dp"/>
-
-
-
-
+            android:layout_marginStart="40dp"
+            android:onClick="submitQuestion"/>
 
     </RelativeLayout>
 
