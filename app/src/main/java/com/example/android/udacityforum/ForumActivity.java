@@ -63,7 +63,7 @@ public class ForumActivity extends AppCompatActivity {
             quesList.add(new QuestionFormat("heading " + i, "content " + i));
         }
         //-----------------------------------------------
-        MyForumRecyclerViewAdapter adapter = new MyForumRecyclerViewAdapter(quesList, this);
+        ForumRecyclerViewAdapter adapter = new ForumRecyclerViewAdapter(quesList, this);
         rv.setAdapter(adapter);
         fab_button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -95,7 +95,7 @@ public class ForumActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.menu_profile:
-                        Intent n = new Intent(ForumActivity.this, activity_userpanel.class);
+                        Intent n = new Intent(ForumActivity.this, UserPanelActivity.class);
                         startActivity(n);
                         n.putExtra("name2", name);
                         n.putExtra("picURL2", picURL);

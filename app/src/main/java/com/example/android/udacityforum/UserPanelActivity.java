@@ -29,15 +29,15 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.example.android.udacityforum.Fragments.userPanelFragment1;
-import com.example.android.udacityforum.Fragments.userPanelFragment2;
-import com.example.android.udacityforum.Fragments.userPanelFragment3;
-import com.example.android.udacityforum.Fragments.userPanelFragment4;
+import com.example.android.udacityforum.Fragments.SummaryFragment;
+import com.example.android.udacityforum.Fragments.ActivityFragment;
+import com.example.android.udacityforum.Fragments.NotificationsFragment;
+import com.example.android.udacityforum.Fragments.PreferencesFragment;
 import com.firebase.ui.auth.AuthUI;
 
 import java.io.IOException;
 
-public class activity_userpanel extends AppCompatActivity {
+public class UserPanelActivity extends AppCompatActivity {
 
     NavigationView navigationView3;
     DrawerLayout drawerLayout3;
@@ -99,7 +99,7 @@ public class activity_userpanel extends AppCompatActivity {
         //setting the imported data to the views.
         userNameLayout.setText(name2);
         emailLayout.setText(Email2);
-        Glide.with(activity_userpanel.this).load(picURL2).into(pic);
+        Glide.with(UserPanelActivity.this).load(picURL2).into(pic);
 
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
@@ -125,7 +125,7 @@ public class activity_userpanel extends AppCompatActivity {
         UserName = (TextView) header.findViewById(R.id.tv_name);
         UserName.setText(name2);
         UserPic = (ImageView) header.findViewById(R.id.iv_profile);
-        Glide.with(activity_userpanel.this).load(picURL2).into(UserPic);
+        Glide.with(UserPanelActivity.this).load(picURL2).into(UserPic);
         UserEmail = (TextView) header.findViewById(R.id.tv_email);
         UserEmail.setText(Email2);
 
@@ -135,7 +135,7 @@ public class activity_userpanel extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.menu_profile:
-                        Intent o = new Intent(activity_userpanel.this, activity_userpanel.class);
+                        Intent o = new Intent(UserPanelActivity.this, UserPanelActivity.class);
                         startActivity(o);
                         o.putExtra("name2", name2);
                         o.putExtra("picURL2", picURL2);
@@ -144,11 +144,11 @@ public class activity_userpanel extends AppCompatActivity {
                         break;
 
                     case R.id.menu_home:
-                        startActivity(new Intent(activity_userpanel.this, MainActivity.class));
+                        startActivity(new Intent(UserPanelActivity.this, MainActivity.class));
                         break;
 
                     case R.id.menu_logout:
-                        AuthUI.getInstance().signOut(activity_userpanel.this);
+                        AuthUI.getInstance().signOut(UserPanelActivity.this);
                         AppExit();
                         break;
                 }
@@ -249,16 +249,16 @@ public class activity_userpanel extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    userPanelFragment1 tab1 = new userPanelFragment1();
+                    SummaryFragment tab1 = new SummaryFragment();
                     return tab1;
                 case 1:
-                    userPanelFragment2 tab2 = new userPanelFragment2();
+                    ActivityFragment tab2 = new ActivityFragment();
                     return tab2;
                 case 2:
-                    userPanelFragment3 tab3 = new userPanelFragment3();
+                    NotificationsFragment tab3 = new NotificationsFragment();
                     return tab3;
                 case 3:
-                    userPanelFragment4 tab4 = new userPanelFragment4();
+                    PreferencesFragment tab4 = new PreferencesFragment();
                     return tab4;
                 default:
                     return null;

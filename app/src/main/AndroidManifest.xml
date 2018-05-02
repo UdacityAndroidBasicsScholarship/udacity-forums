@@ -16,7 +16,7 @@
         <activity android:name=".ForumActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".NewQuestionActivity" />
-        <activity android:name=".splash_screen">
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -24,7 +24,7 @@
 
         </activity>
         <activity
-            android:name=".activity_userpanel"
+            android:name=".UserPanelActivity"
             android:label="@string/title_activity_userpanel"
             android:theme="@style/AppTheme">
         </activity>

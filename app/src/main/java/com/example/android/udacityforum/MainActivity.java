@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
                 int id = item.getItemId();
                 switch (id) {
                     case R.id.menu_profile:
-                        Intent k = new Intent(MainActivity.this, activity_userpanel.class);
+                        Intent k = new Intent(MainActivity.this, UserPanelActivity.class);
                         k.putExtra("name2", userDetails.getDisplayName());
                         k.putExtra("picURL2", userDetails.getPhotoUrl().toString());
                         k.putExtra("Email2", userDetails.getEmail());
@@ -151,7 +151,7 @@ public class MainActivity extends AppCompatActivity {
         btn_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent k = new Intent(MainActivity.this, activity_userpanel.class);
+                Intent k = new Intent(MainActivity.this, UserPanelActivity.class);
                 k.putExtra("name2", userDetails.getDisplayName());
                 k.putExtra("picURL2", userDetails.getPhotoUrl().toString());
                 k.putExtra("Email2", userDetails.getEmail());

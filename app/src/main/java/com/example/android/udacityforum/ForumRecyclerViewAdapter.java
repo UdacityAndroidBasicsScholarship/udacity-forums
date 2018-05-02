@@ -13,12 +13,12 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-class MyForumRecyclerViewAdapter extends RecyclerView.Adapter<MyForumRecyclerViewAdapter.ViewHolder> {
+class ForumRecyclerViewAdapter extends RecyclerView.Adapter<ForumRecyclerViewAdapter.ViewHolder> {
     private ArrayList<QuestionFormat> quesList;
     private LayoutInflater inflater;
     private Context context;
 
-    public MyForumRecyclerViewAdapter(ArrayList<QuestionFormat> list, Context context) {
+    public ForumRecyclerViewAdapter(ArrayList<QuestionFormat> list, Context context) {
         this.quesList = list;
         this.context = context;
     }
