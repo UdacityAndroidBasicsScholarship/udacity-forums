@@ -1,67 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
     android:orientation="vertical"
     android:padding="8dp">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:padding="16dp"
-        android:text="Ask new Question"
-        android:textColor="#ffffff"
-        android:textSize="26sp"
-        android:textStyle="bold" />
+        android:orientation="vertical">
 
-    <View
-        android:layout_width="250dp"
-        android:layout_height="2dp"
-        android:layout_marginBottom="40dp"
-        android:layout_marginLeft="16dp"
-        android:background="#ffffff" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:padding="16dp"
+            android:text="Ask new Question"
+            android:textColor="#ffffff"
+            android:textSize="26sp"
+            android:textStyle="bold" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="serif"
-        android:padding="8dp"
-        android:text="Title"
-        android:textColor="#ffffff"
-        android:textSize="20sp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@android:color/white" />
 
-    <EditText
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:padding="8dp"
+            android:text="Title"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:visibility="gone" />
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:fontFamily="serif"
-        android:padding="8dp"
-        android:text="Body"
-        android:textColor="#ffffff"
-        android:textSize="20sp" />
 
-    <EditText
-        android:id="@+id/body"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp" />
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_ask_new_que"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@android:color/black"
+            app:hintTextAppearance="@style/Base.TextAppearance.AppCompat.Medium">
+
+            <EditText
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/square_bg"
+                android:backgroundTint="@android:color/white"
+                android:hint="Title"
+                android:inputType="textMultiLine"
+                android:padding="10dp"
+                android:textColor="@android:color/black" />
+        </android.support.design.widget.TextInputLayout>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="serif"
+            android:padding="8dp"
+            android:text="Body"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:visibility="gone" />
+
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/input_layout_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_ask_new_que"
+            android:layout_marginTop="10dp"
+            android:textColorHint="@android:color/black"
+            app:hintTextAppearance="@style/Base.TextAppearance.AppCompat.Medium">
+
+            <EditText
+                android:id="@+id/body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/square_bg"
+                android:backgroundTint="@android:color/white"
+                android:gravity="top"
+                android:hint="Body"
+                android:inputType="textMultiLine"
+                android:lines="10"
+                android:padding="10dp"
+                android:textColor="@android:color/black"
+                android:textColorHint="@android:color/white" />
+        </android.support.design.widget.TextInputLayout>
+
+    </LinearLayout>
 
     <Button
         android:id="@+id/submit"
-        android:layout_width="150dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+
         android:background="@drawable/input"
         android:onClick="submitQuestion"
         android:paddingBottom="5dp"
@@ -70,4 +113,4 @@
         android:textSize="@dimen/fontSize_20" />
 
 
-</LinearLayout>
+</RelativeLayout>
