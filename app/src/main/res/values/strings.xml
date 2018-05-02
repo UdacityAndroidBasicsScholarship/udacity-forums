@@ -31,6 +31,10 @@
     <string name="user_summary">User Summary</string>
     <string name="user_preferences">User preferences</string>
 
+    <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). -->
+    <string name="facebook_application_id" translatable="false">163843787646025</string>
+    <string name="facebook_login_protocol_scheme" translatable="false">fb163843787646025</string>
+
 
     <string name="enter_your_question_please">Enter Your Question, Please</string>
     <string name="course_code">Course code</string>

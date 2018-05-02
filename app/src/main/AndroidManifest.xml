@@ -15,18 +15,18 @@
         <activity android:name=".ForumActivity" />
         <activity android:name=".MainActivity" />
         <activity android:name=".NewQuestionActivity" />
-       <activity android:name=".splash_screen"/>
-        <activity android:name=".ActivitySlider">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
+       <activity android:name=".splash_screen">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter> </activity>
+        <activity android:name=".ActivitySlider">
         </activity>
         <activity
             android:name=".activity_userpanel"
             android:label="@string/title_activity_userpanel"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme"> </activity>
 
         <meta-data
             android:name="preloaded_fonts"
