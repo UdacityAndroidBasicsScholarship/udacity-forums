@@ -1,116 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:background="@drawable/bg"
     android:orientation="vertical"
     android:padding="8dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/app_icon"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="40dp"
+            android:id="@+id/app_icon" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/service_name"
+            android:layout_toEndOf="@id/app_icon"
+            android:layout_alignBottom="@id/app_icon"
+            android:layout_marginBottom="22dp"
+            android:layout_marginStart="30dp"
+            android:id="@+id/app_name"/>
 
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:fontFamily="serif"
-            android:padding="16dp"
-            android:text="Ask new Question"
-            android:textColor="#ffffff"
-            android:textSize="26sp"
-            android:textStyle="bold" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="2dp"
-            android:background="@android:color/white" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="serif"
-            android:padding="8dp"
-            android:text="Title"
-            android:textColor="#ffffff"
-            android:textSize="20sp"
-            android:visibility="gone" />
-
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_layout_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_ask_new_que"
-            android:layout_marginTop="10dp"
-            android:textColorHint="@android:color/black"
-            app:hintTextAppearance="@style/Base.TextAppearance.AppCompat.Medium">
-
-            <EditText
-                android:id="@+id/title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/square_bg"
-                android:backgroundTint="@android:color/white"
-                android:hint="Title"
-                android:inputType="textMultiLine"
-                android:padding="10dp"
-                android:textColor="@android:color/black" />
-        </android.support.design.widget.TextInputLayout>
-
-
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_below="@id/app_icon"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
-            android:fontFamily="serif"
-            android:padding="8dp"
-            android:text="Body"
-            android:textColor="#ffffff"
-            android:textSize="20sp"
-            android:visibility="gone" />
+            android:fontFamily="@font/roboto_slab"
+            android:text="@string/enter_your_question_please"
+            android:textColor="#FFFFFF"
+            android:textSize="22sp" />
 
-
-        <android.support.design.widget.TextInputLayout
-            android:id="@+id/input_layout_body"
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/txt_ask_new_que"
+            android:background="@drawable/input"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="35dp"
+            android:layout_below="@id/app_name"
+            android:layout_marginTop="80dp"
+            android:hint="@string/course_code"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:inputType="number"
+            android:id="@+id/course_code"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="35dp"
+            android:layout_below="@id/course_code"
             android:layout_marginTop="10dp"
-            android:textColorHint="@android:color/black"
-            app:hintTextAppearance="@style/Base.TextAppearance.AppCompat.Medium">
+            android:hint="@string/type_title_or_paste_a_link"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:inputType="textEmailSubject"
+            android:id="@+id/Title"/>
 
-            <EditText
-                android:id="@+id/body"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/square_bg"
-                android:backgroundTint="@android:color/white"
-                android:gravity="top"
-                android:hint="Body"
-                android:inputType="textMultiLine"
-                android:lines="10"
-                android:padding="10dp"
-                android:textColor="@android:color/black"
-                android:textColorHint="@android:color/white" />
-        </android.support.design.widget.TextInputLayout>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round"
+            android:padding="10dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="35dp"
+            android:layout_below="@id/Title"
+            android:layout_marginTop="10dp"
+            android:hint="@string/details"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:inputType="textMultiLine"
+            android:id="@+id/details"/>
 
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/submit"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-
-        android:background="@drawable/input"
-        android:onClick="submitQuestion"
-        android:paddingBottom="5dp"
-        android:text="Submit"
-        android:textColor="#000000"
-        android:textSize="@dimen/fontSize_20" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/details"
+            android:background="@drawable/submit"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="40dp"/>
 
 
-</RelativeLayout>
+
+
+
+    </RelativeLayout>
+
+</ScrollView>
+
+
+
+
+
+
