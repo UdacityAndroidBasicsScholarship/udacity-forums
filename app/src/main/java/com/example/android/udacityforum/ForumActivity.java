@@ -32,9 +32,6 @@ import java.util.ArrayList;
 
 public class ForumActivity extends AppCompatActivity {
 
-    private TextView UserEmail;
-    private TextView UserName;
-    private ImageView UserPic;
     RecyclerView rv;
     FloatingActionButton fab_button;
     NavigationView navigationView2;
@@ -43,6 +40,9 @@ public class ForumActivity extends AppCompatActivity {
     ActionBarDrawerToggle actionBarDrawerToggle2;
     View actionBarView2;
     TextView actionBarTitle2;
+    private TextView UserEmail;
+    private TextView UserName;
+    private ImageView UserPic;
     private ActionBar actionBar2;
 
 

@@ -33,6 +33,7 @@ import java.util.Arrays;
 
 public class MainActivity extends AppCompatActivity {
 
+    public static final int RC_SIGN_IN = 1;
     TextView UserEmail;
     ImageView UserPic;
     TextView UserName;
@@ -47,7 +48,6 @@ public class MainActivity extends AppCompatActivity {
     private Button btn_user;
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
-    public static final int RC_SIGN_IN = 1;
     private FirebaseUser userDetails;
 
     @Override
