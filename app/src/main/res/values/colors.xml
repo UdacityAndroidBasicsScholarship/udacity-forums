@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#121212</color>
     <color name="colorWhite">#ffffff</color>
     <color name="dodger_blue">#1589FF</color>
     <color name="ocean_blue">#2B65EC</color>
@@ -22,5 +22,6 @@
     <color name="pink_300">#F06292</color>.
     <color name="cyan_A400">#00E5FF</color>
     <color name="cyan_A700">#00B8D4</color>
+    <color name="transparent_white">#80000000</color>
     <color name="lightGreen_A400">#76FF03</color>
 </resources>

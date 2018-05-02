@@ -39,6 +39,12 @@ import java.io.IOException;
 
 public class activity_userpanel extends AppCompatActivity {
 
+    NavigationView navigationView3;
+    DrawerLayout drawerLayout3;
+    Toolbar toolbar3;
+    ActionBarDrawerToggle actionBarDrawerToggle3;
+    View actionBarView3;
+    TextView actionBarTitle3;
     private int PICK_IMAGE_REQUEST = 1;
     private ImageButton fab11;
     private ImageView pic;
@@ -47,12 +53,6 @@ public class activity_userpanel extends AppCompatActivity {
     private TextView UserEmail;
     private TextView UserName;
     private ImageView UserPic;
-    NavigationView navigationView3;
-    DrawerLayout drawerLayout3;
-    Toolbar toolbar3;
-    ActionBarDrawerToggle actionBarDrawerToggle3;
-    View actionBarView3;
-    TextView actionBarTitle3;
     private ActionBar actionBar3;
 
     /**
@@ -201,6 +201,39 @@ public class activity_userpanel extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    //getting the image.
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
+
+            Uri uri = data.getData();
+
+            try {
+                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
+                // Log.d(TAG, String.valueOf(bitmap));
+
+                ImageView imageView = (ImageView) findViewById(R.id.imageButton);
+                imageView.setImageBitmap(bitmap);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    public void AppExit() {
+
+        this.finish();
+        Intent intent = new Intent(Intent.ACTION_MAIN);
+        intent.addCategory(Intent.CATEGORY_HOME);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(intent);
+
+    /*int pid = android.os.Process.myPid();=====> use this if you want to kill your activity. But its not a good one to do.
+    android.os.Process.killProcess(pid);*/
+
+    }
 
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
@@ -237,40 +270,6 @@ public class activity_userpanel extends AppCompatActivity {
             // Show 4 total pages.
             return 4;
         }
-    }
-
-    //getting the image.
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
-
-            Uri uri = data.getData();
-
-            try {
-                Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
-                // Log.d(TAG, String.valueOf(bitmap));
-
-                ImageView imageView = (ImageView) findViewById(R.id.imageButton);
-                imageView.setImageBitmap(bitmap);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-    }
-
-    public void AppExit() {
-
-        this.finish();
-        Intent intent = new Intent(Intent.ACTION_MAIN);
-        intent.addCategory(Intent.CATEGORY_HOME);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(intent);
-
-    /*int pid = android.os.Process.myPid();=====> use this if you want to kill your activity. But its not a good one to do.
-    android.os.Process.killProcess(pid);*/
-
     }
 
 
