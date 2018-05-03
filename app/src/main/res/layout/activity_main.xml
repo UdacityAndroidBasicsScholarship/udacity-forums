@@ -41,9 +41,9 @@
                 android:layout_marginLeft="@dimen/margin_20"
                 android:layout_marginRight="@dimen/margin_20"
                 android:layout_marginTop="@dimen/fontSize_20"
-                android:background="@color/amber_500"
+                android:background="@color/dodger_blue"
                 android:text="@string/courses"
-                android:textColor="@color/cyan_A700"
+                android:textColor="@color/colorWhite"
                 android:textSize="@dimen/fontSize_20" />
 
             <Button
@@ -53,9 +53,9 @@
                 android:layout_marginLeft="@dimen/margin_20"
                 android:layout_marginRight="@dimen/margin_20"
                 android:layout_marginTop="@dimen/fontSize_20"
-                android:background="@color/amber_500"
+                android:background="@color/dodger_blue"
                 android:text="@string/discussion_form"
-                android:textColor="@color/cyan_A700"
+                android:textColor="@color/colorWhite"
                 android:textSize="@dimen/fontSize_20" />
 
             <Button
@@ -65,9 +65,9 @@
                 android:layout_marginLeft="@dimen/margin_20"
                 android:layout_marginRight="@dimen/margin_20"
                 android:layout_marginTop="@dimen/fontSize_20"
-                android:background="@color/amber_500"
+                android:background="@color/dodger_blue"
                 android:text="@string/user_panel"
-                android:textColor="@color/cyan_A700"
+                android:textColor="@color/colorWhite"
                 android:textSize="@dimen/fontSize_20" />
 
 
