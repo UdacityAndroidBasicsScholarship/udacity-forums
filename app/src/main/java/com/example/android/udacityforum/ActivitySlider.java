@@ -6,6 +6,7 @@ import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -14,30 +15,39 @@ public class ActivitySlider extends AppCompatActivity {
     private ViewPager mSlideViewPager;
     private LinearLayout mDotsLayout;
     private TextView[] mDots;
+    Button done;
+    Button prev;
 
     private SliderAdapter sliderAdapter;
 
 
     private int nCurrentPage;
+    ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
+        @Override
+        public void onPageScrolled(int i, float v, int i1) {
+
+        }
+
+        @Override
+        public void onPageSelected(int i) {
+            if (i == 3) {
+                done.setVisibility(View.VISIBLE);
+                prev.setVisibility(View.GONE);
+            } else {
+                done.setVisibility(View.GONE);
+                prev.setVisibility(View.VISIBLE);
+            }
+            addDOtsIndicator(i);
+            nCurrentPage = i;
+        }
 
 
-        setContentView(R.layout.viewpager_activity);
+        @Override
+        public void onPageScrollStateChanged(int i) {
 
-        mSlideViewPager = (ViewPager) findViewById(R.id.slideviewpager);
-        mDotsLayout = (LinearLayout) findViewById(R.id.dotslayout);
-
-
-        sliderAdapter = new SliderAdapter(this);
-        mSlideViewPager.setAdapter(sliderAdapter);
-        addDOtsIndicator(0);
-        mSlideViewPager.addOnPageChangeListener(viewListener);
-
-
-    }
+        }
+    };
 
     public void addDOtsIndicator(int position) {
         mDots = new TextView[4];
@@ -55,32 +65,30 @@ public class ActivitySlider extends AppCompatActivity {
         }
     }
 
-    ViewPager.OnPageChangeListener viewListener = new ViewPager.OnPageChangeListener() {
-
-        @Override
-        public void onPageScrolled(int i, float v, int i1) {
-
-        }
-
-        @Override
-        public void onPageSelected(int i) {
-
-            addDOtsIndicator(i);
-
-            nCurrentPage = i;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
 
 
-        }
+        setContentView(R.layout.viewpager_activity);
+
+        mSlideViewPager = (ViewPager) findViewById(R.id.slideviewpager);
+        mDotsLayout = (LinearLayout) findViewById(R.id.dotslayout);
+        done = findViewById(R.id.done);
+        done.setVisibility(View.GONE);
+        prev = findViewById(R.id.prev);
+
+        sliderAdapter = new SliderAdapter(this);
+        mSlideViewPager.setAdapter(sliderAdapter);
+        addDOtsIndicator(0);
+        mSlideViewPager.addOnPageChangeListener(viewListener);
 
 
-        @Override
-        public void onPageScrollStateChanged(int i) {
-
-        }
-    };
+    }
 
     public void sendMessage(View view) {
         Intent intent = new Intent(this, MainActivity.class);
         startActivity(intent);
+        finish();
     }
 }
