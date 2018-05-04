@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -29,7 +30,7 @@ public class SliderAdapter extends PagerAdapter {
             R.drawable.comments
     };
     private String[] slide_headings = {
-            "Welcome to Udacity Forums ",
+            "Welcome to Forums",
             "Ask Questions !",
             "Get Answers !",
             "Comments on your question."
@@ -49,13 +50,13 @@ public class SliderAdapter extends PagerAdapter {
 
     @Override
     public boolean isViewFromObject(View view, Object o) {
-        return view == (RelativeLayout) o;
+        return view == o;
     }
 
     @NonNull
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
-        layoutInflater = (LayoutInflater) context.getSystemService(context.LAYOUT_INFLATER_SERVICE);
+        layoutInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         View view = layoutInflater.inflate(R.layout.slide_layout, container, false);
 
         ImageView slideImageView = (ImageView) view.findViewById(R.id.slideimage);
@@ -75,7 +76,7 @@ public class SliderAdapter extends PagerAdapter {
 
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
-        container.removeView((RelativeLayout) object);
+        container.removeView((LinearLayout) object);
     }
 
 

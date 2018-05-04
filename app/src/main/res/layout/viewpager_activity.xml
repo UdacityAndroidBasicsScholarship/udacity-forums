@@ -5,15 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg"
+    android:padding="8dp"
     tools:context=".ActivitySlider">
     <android.support.v4.view.ViewPager
         android:id="@+id/slideviewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="81dp">
+        android:layout_above="@id/dotslayout"
+        android:layout_marginBottom="20dp">
 
     </android.support.v4.view.ViewPager>
     <LinearLayout
@@ -24,7 +25,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="40dp"
         android:padding="5dp"
-
         android:layout_centerHorizontal="true">
 
     </LinearLayout>
