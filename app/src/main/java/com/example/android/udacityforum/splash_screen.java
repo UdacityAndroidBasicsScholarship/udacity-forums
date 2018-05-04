@@ -11,7 +11,7 @@ import android.view.WindowManager;
 public class splash_screen extends AppCompatActivity {
 
     private static int SPLASH_TIME_OUT = 3000;
-
+    Handler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,7 +24,8 @@ public class splash_screen extends AppCompatActivity {
             window.setStatusBarColor(getResources().getColor(R.color.colorBlack));
         }
 
-        new Handler().postDelayed(new Runnable() {
+        handler = new Handler();
+        handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent j = new Intent(splash_screen.this, ActivitySlider.class);
@@ -32,5 +33,11 @@ public class splash_screen extends AppCompatActivity {
                 finish();
             }
         }, SPLASH_TIME_OUT);
+    }
+
+    @Override
+    protected void onDestroy() {
+        handler.removeCallbacksAndMessages(null);
+        super.onDestroy();
     }
 }
