@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,32 +7,35 @@
     tools:context=".LoginActivity">
 
     <ImageView
+        android:contentDescription="@string/logoOne"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/app_icon"
-        android:layout_marginTop="70dp"
-        android:layout_marginStart="40dp"
+        android:layout_marginTop="@dimen/size_70"
+        android:layout_marginStart="@dimen/size_40"
         android:id="@+id/app_icon"/>
 
     <ImageView
+        android:contentDescription="@string/udaCityLogoDesign"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/service_name"
         android:layout_toEndOf="@id/app_icon"
         android:layout_alignBottom="@id/app_icon"
-        android:layout_marginStart="20dp"
-        android:layout_marginBottom="25dp"/>
+        android:layout_marginStart="@dimen/margin_20"
+        android:layout_marginBottom="@dimen/margin_25"/>
 
     <EditText
         android:id="@+id/username_input"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="@dimen/size_60"
         android:layout_below="@id/app_icon"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="90dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginStart="@dimen/size_90"
+        android:layout_marginTop="@dimen/size_60"
         android:hint="@string/emailid_2"
-        android:paddingStart="15dp"
+        android:paddingStart="@dimen/margin_15"
+        android:paddingEnd="@dimen/margin_15"
         android:inputType="textPersonName"
         android:paddingBottom="8dp"
         tools:ignore="HardcodedText"
@@ -46,10 +48,11 @@
         android:layout_height="60dp"
         android:layout_below="@id/username_input"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="90dp"
+        android:layout_marginStart="@dimen/size_90"
         android:layout_marginTop="16dp"
         android:hint="@string/password"
-        android:paddingStart="15dp"
+        android:paddingStart="@dimen/margin_15"
+        android:paddingEnd="@dimen/margin_15"
         android:inputType="textPassword"
         android:paddingBottom="8dp"
         android:id="@+id/password_input"
@@ -62,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="80dp"
+        android:layout_marginStart="@dimen/size_80"
         android:layout_below="@id/password_input"
         android:layout_marginTop="50dp">
 
@@ -71,21 +74,21 @@
             android:layout_weight="1"
             android:layout_height="wrap_content"
             android:id="@+id/sign_in_btn"
-            android:text="Sign In"
+            android:text="@string/signIN"
             android:textAllCaps="true"
             style="@style/styleButton"
-            android:elevation="10dp"/>
+            android:elevation="@dimen/margin_10"/>
 
         <Button
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:layout_marginStart="45dp"
+            android:layout_marginStart="@dimen/size_45"
             android:id="@+id/sign_up_btn"
-            android:text="Sign Up"
+            android:text="@string/signUp"
             android:textAllCaps="true"
             style="@style/styleButton"
-            android:elevation="10dp"/>
+            android:elevation="@dimen/margin_10"/>
 
     </LinearLayout>
 

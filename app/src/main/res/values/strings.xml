@@ -6,9 +6,13 @@
     <string name="email_id">Email id</string>
     <string name="password">Password</string>
     <string name="emailid_2">Email Id</string>
-    <string name="confirm_your_password">Confirm your password</string>
+    <string name="logoOne">logoOne</string>
     <string name="home_page">Go to home page!</string>
-
+    <!--Login Splash-->
+    <string name="confirm_your_password">Confirm your password</string>
+    <string name="signIN">Sign In</string>
+    <string name="signUp">Sign Up</string>
+    <string name="udaCityLogoDesign">udaCity Logo Design</string>
     <!--Home Activity-->
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer">Close Drawer</string>
