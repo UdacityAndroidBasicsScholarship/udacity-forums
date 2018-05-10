@@ -4,23 +4,23 @@
 
         <item
             android:id="@+id/menu_home"
-            android:icon="@android:drawable/btn_radio"
-            android:title="Home" />
+            android:icon="@drawable/home"
+            android:title="@string/home" />
 
         <item
             android:id="@+id/menu_course"
-            android:icon="@android:drawable/btn_radio"
-            android:title="Courses" />
+            android:icon="@drawable/courses"
+            android:title="@string/courses" />
 
         <item
             android:id="@+id/menu_profile"
-            android:icon="@android:drawable/btn_radio"
-            android:title="MyProfile" />
+            android:icon="@drawable/profile"
+            android:title="@string/profile" />
 
         <item
             android:id="@+id/menu_logout"
-            android:icon="@android:drawable/btn_radio"
-            android:title="Logout" />
+            android:icon="@drawable/logout"
+            android:title="@string/logout" />
     </group>
 
 
