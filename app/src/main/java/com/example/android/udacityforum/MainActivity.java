@@ -90,6 +90,8 @@ public class MainActivity extends AppCompatActivity {
                                             new AuthUI.IdpConfig.EmailBuilder().build(),
                                             new AuthUI.IdpConfig.GoogleBuilder().build(),
                                             new AuthUI.IdpConfig.FacebookBuilder().build()))
+                                    .setLogo(R.drawable.udacity_logo)
+                                    .setTheme(R.style.FullscreenTheme)
                                     .build(),
                             RC_SIGN_IN);
 
