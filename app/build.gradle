@@ -1,14 +1,6 @@
 apply plugin: 'com.android.application'
 
 android {
-    signingConfigs {
-        config {
-            keyAlias 'key0'
-            keyPassword 'Qwerty123'
-            storeFile file('G:/App Keys/udacity-forums-key.jks')
-            storePassword 'Qwerty123'
-        }
-    }
     compileSdkVersion 27
     defaultConfig {
         applicationId "com.example.android.udacityforum"
@@ -22,7 +14,6 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.config
         }
     }
 }
