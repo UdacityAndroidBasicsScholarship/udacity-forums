@@ -24,4 +24,6 @@
     <color name="cyan_A700">#00B8D4</color>
     <color name="transparent_white">#80000000</color>
     <color name="lightGreen_A400">#76FF03</color>
+    <color name="colorSecondary">#FFC107</color>
+    <color name="bg_btn_accent">#000000</color>
 </resources>

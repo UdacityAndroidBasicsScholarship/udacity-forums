@@ -9,6 +9,26 @@
     <string name="confirm_your_password">Confirm your password</string>
     <string name="home_page">Go to home page!</string>
 
+    <!--Side Menu-->
+    <string name="home">Home</string>
+    <string name="course">Courses</string>
+    <string name="profile">Profile</string>
+    <string name="logout">Logout</string>
+
+    <!--View Pager-->
+    <string name="skip">Skip</string>
+    <string name="done">Done</string>
+
+    <!--OptionMenu-->
+    <string name="New">New</string>
+    <string name="top">Top</string>
+    <string name="unread">Unread</string>
+    <string name="badges">Badges</string>
+
+    <!--SearchIcon-->
+    <string name="search">Search</string>
+
+
     <!--Home Activity-->
     <string name="open_drawer">Open Drawer</string>
     <string name="close_drawer">Close Drawer</string>
@@ -36,7 +56,7 @@
     <string name="facebook_login_protocol_scheme" translatable="false">fb163843787646025</string>
 
 
-    <string name="enter_your_question_please">Enter Your Question, Please</string>
+    <string name="enter_your_question_please">Enter Your Question\, Please</string>
     <string name="course_code">Course code</string>
     <string name="type_title_or_paste_a_link">Type title or paste a link</string>
     <string name="details">Type here\n\nPlease provide additional details\nabout your question\n\nThat will help mentor answer your\nquestion.</string>
