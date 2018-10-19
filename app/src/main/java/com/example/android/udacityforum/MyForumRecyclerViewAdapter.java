@@ -2,6 +2,7 @@ package com.example.android.udacityforum;
 
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
@@ -23,8 +24,9 @@ class MyForumRecyclerViewAdapter extends RecyclerView.Adapter<MyForumRecyclerVie
         this.context = context;
     }
 
+    @NonNull
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         inflater = LayoutInflater.from(parent.getContext());
         View v = inflater.inflate(R.layout.recycler_view_item, parent, false);
         return new ViewHolder(v);
@@ -33,7 +35,8 @@ class MyForumRecyclerViewAdapter extends RecyclerView.Adapter<MyForumRecyclerVie
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Drawable drawable = ContextCompat.getDrawable(context, R.drawable.app_icon);
-        drawable.setBounds(0, 0, 70, 70);
+        if (drawable != null)
+            drawable.setBounds(0, 0, 70, 70);
         holder.contentTextView.setText(quesList.get(position).getQuesContent());
         holder.headingTextView.setText(quesList.get(position).getQuesHeading());
         holder.headingTextView.setCompoundDrawables(drawable, null, null, null);
@@ -45,12 +48,18 @@ class MyForumRecyclerViewAdapter extends RecyclerView.Adapter<MyForumRecyclerVie
         return quesList.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public void cleanUp() {
+        context = null;
+        quesList.clear();
+        quesList = null;
+    }
+
+    class ViewHolder extends RecyclerView.ViewHolder {
         TextView headingTextView;
         TextView contentTextView;
         CardView animated_card;
 
-        public ViewHolder(View itemView) {
+        ViewHolder(View itemView) {
             super(itemView);
             headingTextView = itemView.findViewById(R.id.recycler_heading);
             contentTextView = itemView.findViewById(R.id.recycler_content_description);
