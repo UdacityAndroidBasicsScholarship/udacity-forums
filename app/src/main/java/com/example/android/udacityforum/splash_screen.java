@@ -10,7 +10,6 @@ import android.view.WindowManager;
 
 public class splash_screen extends AppCompatActivity {
 
-    private static int SPLASH_TIME_OUT = 3000;
     Handler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +24,7 @@ public class splash_screen extends AppCompatActivity {
         }
 
         handler = new Handler();
+        int SPLASH_TIME_OUT = 3000;
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
