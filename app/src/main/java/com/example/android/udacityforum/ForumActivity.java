@@ -32,18 +32,7 @@ import java.util.ArrayList;
 
 public class ForumActivity extends AppCompatActivity {
 
-    RecyclerView rv;
-    FloatingActionButton fab_button;
-    NavigationView navigationView2;
-    DrawerLayout drawerLayout2;
-    Toolbar toolbar2;
-    ActionBarDrawerToggle actionBarDrawerToggle2;
-    View actionBarView2;
-    TextView actionBarTitle2;
-    private TextView UserEmail;
-    private TextView UserName;
-    private ImageView UserPic;
-    private ActionBar actionBar2;
+    private ActionBarDrawerToggle actionBarDrawerToggle2;
 
 
     @Override
@@ -55,8 +44,8 @@ public class ForumActivity extends AppCompatActivity {
         final String picURL = getIntent().getExtras().getString("picURL");
         final String Email = getIntent().getExtras().getString("Email");
 
-        rv = findViewById(R.id.recycler_view);
-        fab_button = findViewById(R.id.fab_button);
+        RecyclerView rv = findViewById(R.id.recycler_view);
+        FloatingActionButton fab_button = findViewById(R.id.fab_button);
         ArrayList<QuestionFormat> quesList = new ArrayList<>();
         //sample data---------------------------------------
         for (int i = 0; i < 15; i++) {
@@ -72,21 +61,21 @@ public class ForumActivity extends AppCompatActivity {
             }
         });
 
-        navigationView2 = findViewById(R.id.navigation_drawer);
-        toolbar2 = (Toolbar) findViewById(R.id.toolbar);
-        drawerLayout2 = (DrawerLayout) findViewById(R.id.nav_drawer2);
+        NavigationView navigationView2 = findViewById(R.id.navigation_drawer);
+        Toolbar toolbar2 = (Toolbar) findViewById(R.id.toolbar);
+        DrawerLayout drawerLayout2 = (DrawerLayout) findViewById(R.id.nav_drawer2);
         setSupportActionBar(toolbar2);
 
         actionBarDrawerToggle2 = new ActionBarDrawerToggle(this, drawerLayout2, toolbar2, R.string.open_drawer, R.string.close_drawer);
         drawerLayout2.addDrawerListener(actionBarDrawerToggle2);
         //setting the user data to fields.
         View header = navigationView2.getHeaderView(0);
-        UserName = (TextView) header.findViewById(R.id.tv_name);
-        UserName.setText(name);
-        UserPic = (ImageView) header.findViewById(R.id.iv_profile);
-        Glide.with(ForumActivity.this).load(picURL).into(UserPic);
-        UserEmail = (TextView) header.findViewById(R.id.tv_email);
-        UserEmail.setText(Email);
+        TextView userName = (TextView) header.findViewById(R.id.tv_name);
+        userName.setText(name);
+        ImageView userPic = (ImageView) header.findViewById(R.id.iv_profile);
+        Glide.with(ForumActivity.this).load(picURL).into(userPic);
+        TextView userEmail = (TextView) header.findViewById(R.id.tv_email);
+        userEmail.setText(Email);
 
 
         navigationView2.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
@@ -118,18 +107,19 @@ public class ForumActivity extends AppCompatActivity {
 
         ActionBar.LayoutParams params = new ActionBar.LayoutParams(ActionBar.LayoutParams
                 .MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        actionBarView2 = LayoutInflater.from(this).inflate(R.layout.actionbar_custom_view, null);
+        View actionBarView2 = LayoutInflater.from(this).inflate(R.layout.actionbar_custom_view, null);
 
-        actionBarTitle2 = (TextView) actionBarView2.findViewById(R.id.tv_heading);
+        TextView actionBarTitle2 = (TextView) actionBarView2.findViewById(R.id.tv_heading);
         actionBarTitle2.setText(getString(R.string.discussion_form));
 
-        actionBar2 = getSupportActionBar();
-        getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
-        getSupportActionBar().setCustomView(actionBarView2, params);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setHomeButtonEnabled(true);
-        getSupportActionBar().setHomeAsUpIndicator(R.drawable.ham_icon);
-
+        ActionBar actionBar2 = getSupportActionBar();
+        if (actionBar2 != null) {
+            actionBar2.setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
+            actionBar2.setCustomView(actionBarView2, params);
+            actionBar2.setDisplayHomeAsUpEnabled(true);
+            actionBar2.setHomeButtonEnabled(true);
+            actionBar2.setHomeAsUpIndicator(R.drawable.ham_icon);
+        }
 
     }
 
@@ -162,7 +152,9 @@ public class ForumActivity extends AppCompatActivity {
             case R.id.action_search2:
                 Toast.makeText(getApplicationContext(), "Action Search Clicked", Toast.LENGTH_SHORT).show();
                 return true;
-
+            case android.R.id.home:
+                onBackPressed();
+                return true;
             default:
                 // If we got here, the user's action was not recognized.
                 // Invoke the superclass to handle it.
@@ -171,16 +163,11 @@ public class ForumActivity extends AppCompatActivity {
     }
 
     public void AppExit() {
-
         this.finish();
         Intent intent = new Intent(Intent.ACTION_MAIN);
         intent.addCategory(Intent.CATEGORY_HOME);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
-
-    /*int pid = android.os.Process.myPid();=====> use this if you want to kill your activity. But its not a good one to do.
-    android.os.Process.killProcess(pid);*/
-
     }
 
 
