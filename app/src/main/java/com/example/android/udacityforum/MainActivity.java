@@ -34,18 +34,10 @@ import java.util.Arrays;
 public class MainActivity extends AppCompatActivity {
 
     public static final int RC_SIGN_IN = 1;
-    TextView UserEmail;
-    ImageView UserPic;
-    TextView UserName;
-    Toolbar toolbar;
-    NavigationView navigationView;
-    DrawerLayout drawerLayout;
-    ActionBarDrawerToggle actionBarDrawerToggle;
-    View actionBarView;
-    TextView actionBarTitle;
-    private ActionBar actionBar;
-    private Button btn_forum;
-    private Button btn_user;
+    private TextView UserEmail;
+    private ImageView UserPic;
+    private TextView UserName;
+    private ActionBarDrawerToggle actionBarDrawerToggle;
     private FirebaseAuth mFirebaseAuth;
     private FirebaseAuth.AuthStateListener mAuthStateListener;
     private FirebaseUser userDetails;
@@ -56,9 +48,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         //navigation view.
-        navigationView = findViewById(R.id.navigation_drawer);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
-        drawerLayout = (DrawerLayout) findViewById(R.id.nav_drawer);
+        NavigationView navigationView = findViewById(R.id.navigation_drawer);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        DrawerLayout drawerLayout = (DrawerLayout) findViewById(R.id.nav_drawer);
         setSupportActionBar(toolbar);
         actionBarDrawerToggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.open_drawer, R.string.close_drawer);
         drawerLayout.addDrawerListener(actionBarDrawerToggle);
@@ -126,19 +118,19 @@ public class MainActivity extends AppCompatActivity {
 
         ActionBar.LayoutParams params = new ActionBar.LayoutParams(ActionBar.LayoutParams
                 .MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT, Gravity.CENTER);
-        actionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_custom_view, null);
+        View actionBarView = LayoutInflater.from(this).inflate(R.layout.actionbar_custom_view, null);
 
-        actionBarTitle = (TextView) actionBarView.findViewById(R.id.tv_heading);
+        TextView actionBarTitle = (TextView) actionBarView.findViewById(R.id.tv_heading);
         actionBarTitle.setText(getString(R.string.activity_name));
 
-        actionBar = getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         getSupportActionBar().setDisplayOptions(ActionBar.DISPLAY_SHOW_CUSTOM);
         getSupportActionBar().setCustomView(actionBarView, params);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setHomeAsUpIndicator(R.drawable.ham_icon);
 
-        btn_forum = (Button) findViewById(R.id.btn_forum);
+        Button btn_forum = (Button) findViewById(R.id.btn_forum);
         btn_forum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -149,7 +141,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(j);
             }
         });
-        btn_user = (Button) findViewById(R.id.user_panel);
+        Button btn_user = (Button) findViewById(R.id.user_panel);
         btn_user.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
